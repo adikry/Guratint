@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
 
@@ -138,13 +138,11 @@
     <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
     <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
     <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
-    <script src="/assets/vendor/tilt/vanilla-tilt.min.js"></script>
 
     @stack('js')
 
     <!-- Template master JS -->
     <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/custom.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 @extends('layout.frontend.main')
-
 @section('container')
     <!-- Begin page header -->
     <div id="page-header" class="ph-full ph-cap-sm ph-ghost-scroll ph-image-cropped ph-content-parallax">
@@ -131,53 +130,27 @@
                     <div class="tt-col-xl-8">
                         <div class="anim-fadeinup padding-left-0 padding-right-0 portfolio-interactive pi-inline ">
                             <div class="pi-inner">
-                                <div class="portfolio-interactive-ghost">Portfolio</div>
                                 <div class="portfolio-interactive-list">
-                                    <div class="portfolio-interactive-item">
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-1.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
+                                    @foreach ($kategori as $itemKat)
+                                        <div class="portfolio-interactive-item">
+                                            <figure class="pi-item-image">
+                                                <div class="pi-item-image-inner">
+                                                    <img src="{{ asset('storage/' . $itemKat->thumbnail) }}" alt="image">
+                                                </div>
+                                            </figure>
 
-                                        <a href="single-project-1.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">Custom Akrilik</h2>
-                                                <div class="pi-item-hover-title">Custom Akrilik</div>
-                                            </div>
-                                            {{-- <div class="pi-item-category-wrap">
-                                                <div class="pi-item-category">People</div>
-                                                <!-- <div class="pi-item-category">Varia</div> -->
-                                            </div> --}}
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
+                                            <a href="" class="pi-item-title-link skew-on-scroll">
+                                                <div class="pi-item-title-link-inner">
+                                                    <h2 class="pi-item-title">{{ $itemKat->nama }}</h2>
+                                                    <div class="pi-item-hover-title">{{ $itemKat->nama }}</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
                                     <!-- End portfolio interactive item -->
 
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
+                                    {{-- <div class="portfolio-interactive-item">
 
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-2.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
-
-                                        <a href="single-project-2.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">PVC Board</h2>
-                                                <div class="pi-item-hover-title">PVC Board</div>
-                                            </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
-
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
-
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
                                         <figure class="pi-item-image">
                                             <div class="pi-item-image-inner">
                                                 <video class="pi-item-video" loop muted preload="metadata"
@@ -185,117 +158,16 @@
                                                     <source src="assets/vids/fashion-shoot.mp4" type="video/mp4">
                                                     <source src="assets/vids/fashion-shoot.webm" type="video/webm">
                                                 </video>
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
+                                            </div> 
+                                        </figure> 
 
                                         <a href="single-project-3.html" class="pi-item-title-link skew-on-scroll">
                                             <div class="pi-item-title-link-inner">
                                                 <h2 class="pi-item-title">Card Board</h2>
                                                 <div class="pi-item-hover-title">Card Board</div>
                                             </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
-
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
-
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-3.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
-
-                                        <a href="single-project-4.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">Canvas</h2>
-                                                <div class="pi-item-hover-title">Canvas</div>
-                                            </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
-
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
-
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-4.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
-
-                                        <a href="single-project-5.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">DTF Printing</h2>
-                                                <div class="pi-item-hover-title">DTF Printing</div>
-                                            </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
-
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
-
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-5.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
-
-                                        <a href="single-project-6.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">Digital Printing & Offset</h2>
-                                                <div class="pi-item-hover-title">Digital Printing & Offset</div>
-                                            </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
-
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
-
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-6.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
-
-                                        <a href="single-project-7.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">Sublime</h2>
-                                                <div class="pi-item-hover-title">Sublime</div>
-                                            </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
-
-                                    <!-- Begin portfolio interactive item
-                                                                                                                                                                                                                                                                                                                                                                                ====================================== -->
-                                    <div class="portfolio-interactive-item">
-
-                                        <!-- Add class "pi-item-image-is-light" if you use a very light image -->
-                                        <figure class="pi-item-image pi-item-image-is-light">
-                                            <div class="pi-item-image-inner">
-                                                <img src="assets/img/portfolio/940/portfolio-7.jpg" alt="image">
-                                            </div> <!-- /.pi-item-image-inner -->
-                                        </figure> <!-- /.pi-item-image -->
-
-                                        <a href="single-project-8.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">Screen Printing</h2>
-                                                <div class="pi-item-hover-title">Screen Printing</div>
-                                            </div>
-                                        </a> <!-- /.pi-item-title-link -->
-                                    </div>
-                                    <!-- End portfolio interactive item -->
+                                        </a> 
+                                    </div> --}}
                                 </div>
                                 <!-- End portfolio interactive list -->
 
@@ -308,11 +180,6 @@
             <!-- /.tt-section-inner -->
         </div>
 
-        <!-- =======================
-                                                                                                                                                                                                                                                                                                                                                                        ///// Begin tt-section /////
-                                                                                                                                                                                                                                                                                                                                                                        ============================
-                                                                                                                                                                                                                                                                                                                                                                        * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-                                                                                                                                                                                                                                                                                                                                                                        -->
         <div class="tt-section padding-top-xlg-100 padding-bottom-xlg-150">
             <div class="tt-section-inner tt-wrap max-width-1700">
                 <div class="tt-row margin-left-lg-3-p margin-right-lg-3-p">
@@ -460,7 +327,6 @@
             </div>
             <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
         <div class="tt-section padding-top-xlg-100 padding-bottom-xlg-150">
             <div class="tt-section-inner tt-wrap">
@@ -474,192 +340,45 @@
                 <div id="portfolio-grid" class="pgi-hover">
                     <div class="tt-grid ttgr-layout-creative-2 ttgr-gap-4">
                         <div class="tt-grid-items-wrap isotope-items-wrap">
-                            <div class="tt-grid-item isotope-item people">
-                                <div class="ttgr-item-inner">
-                                    <div class="portfolio-grid-item">
-                                        <a href="single-project-1.html" class="pgi-image-wrap"
-                                            data-cursor="View<br>Project">
-                                            <!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
-                                            <div class="pgi-image-holder">
-                                                <div class="pgi-image-inner anim-zoomin">
-                                                    <figure class="pgi-image ttgr-height">
-                                                        <img src="/assets/img/portfolio/1200/portfolio-1.jpg"
-                                                            alt="image" />
-                                                    </figure>
-                                                    <!-- /.pgi-image -->
+                            @foreach ($portos as $porto)
+                                <div class="tt-grid-item isotope-item">
+                                    <div class="ttgr-item-inner">
+                                        <div class="portfolio-grid-item">
+                                            <a href="#detailPorto" class="pgi-image-wrap" data-cursor="View<br>Project">
+                                                <div class="pgi-image-holder cover-opacity-2">
+                                                    <div class="pgi-image-inner anim-zoomin">
+                                                        <figure class="pgi-image ttgr-height">
+                                                            <img src="{{ asset('storage/' . $porto->thumbnail) }}"
+                                                                alt="guratint project {{ $porto->nama }}" />
+                                                        </figure>
+                                                        <!-- /.pgi-image -->
+                                                    </div>
+                                                    <!-- /.pgi-image-inner -->
                                                 </div>
-                                                <!-- /.pgi-image-inner -->
-                                            </div>
-                                            <!-- /.pgi-image-holder -->
-                                        </a>
-                                        <!-- /.pgi-image-wrap -->
+                                                <!-- /.pgi-image-holder -->
+                                            </a>
+                                            <!-- /.pgi-image-wrap -->
 
-                                        <div class="pgi-caption">
-                                            <div class="pgi-caption-inner">
-                                                <h2 class="pgi-title">
-                                                    <a href="single-project-1.html">Elegant Women</a>
-                                                </h2>
-                                                <div class="pgi-categories-wrap">
-                                                    {{-- <div class="pgi-category">People</div> --}}
-                                                    <!-- <div class="pgi-category">Varia</div> -->
+                                            <div class="pgi-caption">
+                                                <div class="pgi-caption-inner">
+                                                    <h2 class="pgi-title">
+                                                        <a href="#detail-project">{{ $porto->nama }}</a>
+                                                    </h2>
+                                                    <div class="pgi-categories-wrap">
+                                                        <div class="pgi-category">{{ $porto->kategori->nama }}</div>
+                                                    </div>
+                                                    <!-- /.pli-categories-wrap -->
                                                 </div>
-                                                <!-- /.pli-categories-wrap -->
+                                                <!-- /.pgi-caption-inner -->
                                             </div>
-                                            <!-- /.pgi-caption-inner -->
+                                            <!-- /.pgi-caption -->
                                         </div>
-                                        <!-- /.pgi-caption -->
+                                        <!-- End portfolio grid item -->
                                     </div>
-                                    <!-- End portfolio grid item -->
+                                    <!-- /.ttgr-item-inner -->
                                 </div>
-                                <!-- /.ttgr-item-inner -->
-                            </div>
-                            <!-- End tt-Grid item -->
-
-                            <!-- Begin tt-Grid item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="tt-grid-item isotope-item creative">
-                                <div class="ttgr-item-inner">
-                                    <!-- Begin portfolio grid item
-                                                                                                                                                                                                                                                                                                                                                                                            ===============================
-                                                                                                                                                                                                                                                                                                                                                                                            * Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
-                                                                                                                                                                                                                                                                                                                                                                                            -->
-                                    <div class="portfolio-grid-item">
-                                        <a href="single-project-2.html" class="pgi-image-wrap"
-                                            data-cursor="View<br>Project">
-                                            <!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
-                                            <div class="pgi-image-holder">
-                                                <div class="pgi-image-inner anim-zoomin">
-                                                    <figure class="pgi-image ttgr-height">
-                                                        <img src="/assets/img/portfolio/1200/portfolio-2.jpg"
-                                                            alt="image" />
-                                                    </figure>
-                                                    <!-- /.pgi-image -->
-                                                </div>
-                                                <!-- /.pgi-image-inner -->
-                                            </div>
-                                            <!-- /.pgi-image-holder -->
-                                        </a>
-                                        <!-- /.pgi-image-wrap -->
-
-                                        <div class="pgi-caption">
-                                            <div class="pgi-caption-inner">
-                                                <h2 class="pgi-title">
-                                                    <a href="single-project-2.html">The Chase</a>
-                                                </h2>
-                                                <div class="pgi-categories-wrap">
-                                                    <div class="pgi-category">Creative</div>
-                                                    <!-- <div class="pgi-category">Varia</div> -->
-                                                </div>
-                                                <!-- /.pli-categories-wrap -->
-                                            </div>
-                                            <!-- /.pgi-caption-inner -->
-                                        </div>
-                                        <!-- /.pgi-caption -->
-                                    </div>
-                                    <!-- End portfolio grid item -->
-                                </div>
-                                <!-- /.ttgr-item-inner -->
-                            </div>
-                            <!-- End tt-Grid item -->
-
-                            <!-- Begin tt-Grid item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="tt-grid-item isotope-item people">
-                                <div class="ttgr-item-inner">
-                                    <!-- Begin portfolio grid item
-                                                                                                                                                                                                                                                                                                                                                                                            ===============================
-                                                                                                                                                                                                                                                                                                                                                                                            * Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
-                                                                                                                                                                                                                                                                                                                                                                                            -->
-                                    <div class="portfolio-grid-item">
-                                        <a href="single-project-3.html" class="pgi-image-wrap"
-                                            data-cursor="View<br>Project">
-                                            <!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
-                                            <div class="pgi-image-holder">
-                                                <div class="pgi-image-inner anim-zoomin">
-                                                    <figure class="pgi-video-wrap ttgr-height">
-                                                        <video class="pgi-video" loop muted preload="metadata"
-                                                            poster="/assets/vids/fashion-shoot.jpg">
-                                                            <source src="/assets/vids/fashion-shoot.mp4"
-                                                                type="video/mp4" />
-                                                            <source src="/assets/vids/fashion-shoot.webm"
-                                                                type="video/webm" />
-                                                        </video>
-                                                    </figure>
-                                                    <!-- /.pgi-video-wrap -->
-                                                </div>
-                                                <!-- /.pgi-image-inner -->
-                                            </div>
-                                            <!-- /.pgi-image-holder -->
-                                        </a>
-                                        <!-- /.pgi-image-wrap -->
-
-                                        <div class="pgi-caption">
-                                            <div class="pgi-caption-inner">
-                                                <h2 class="pgi-title">
-                                                    <a href="single-project-3.html">Fashion Shoot</a>
-                                                </h2>
-                                                <div class="pgi-categories-wrap">
-                                                    <div class="pgi-category">People</div>
-                                                    <!-- <div class="pgi-category">Varia</div> -->
-                                                </div>
-                                                <!-- /.pli-categories-wrap -->
-                                            </div>
-                                            <!-- /.pgi-caption-inner -->
-                                        </div>
-                                        <!-- /.pgi-caption -->
-                                    </div>
-                                    <!-- End portfolio grid item -->
-                                </div>
-                                <!-- /.ttgr-item-inner -->
-                            </div>
-                            <!-- End tt-Grid item -->
-
-                            <!-- Begin tt-Grid item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="tt-grid-item isotope-item nature">
-                                <div class="ttgr-item-inner">
-                                    <!-- Begin portfolio grid item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ===============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -->
-                                    <div class="portfolio-grid-item">
-                                        <a href="single-project-4.html" class="pgi-image-wrap"
-                                            data-cursor="View<br>Project">
-                                            <!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
-                                            <div class="pgi-image-holder">
-                                                <div class="pgi-image-inner anim-zoomin">
-                                                    <figure class="pgi-image ttgr-height">
-                                                        <img src="/assets/img/portfolio/1200/portfolio-3.jpg"
-                                                            alt="image" />
-                                                    </figure>
-                                                    <!-- /.pgi-image -->
-                                                </div>
-                                                <!-- /.pgi-image-inner -->
-                                            </div>
-                                            <!-- /.pgi-image-holder -->
-                                        </a>
-                                        <!-- /.pgi-image-wrap -->
-
-                                        <div class="pgi-caption">
-                                            <div class="pgi-caption-inner">
-                                                <h2 class="pgi-title">
-                                                    <a href="single-project-4.html">Enchanting Nature</a>
-                                                </h2>
-                                                <div class="pgi-categories-wrap">
-                                                    <div class="pgi-category">Nature</div>
-                                                    <!-- <div class="pgi-category">Varia</div> -->
-                                                </div>
-                                                <!-- /.pli-categories-wrap -->
-                                            </div>
-                                            <!-- /.pgi-caption-inner -->
-                                        </div>
-                                        <!-- /.pgi-caption -->
-                                    </div>
-                                    <!-- End portfolio grid item -->
-                                </div>
-                                <!-- /.ttgr-item-inner -->
-                            </div>
-                            <!-- End tt-Grid item -->
+                                <!-- End tt-Grid item -->
+                            @endforeach
                         </div>
                         <!-- End tt-Grid items wrap  -->
                     </div>
@@ -669,7 +388,7 @@
 
                 <div class="text-center anim-fadeinup">
                     <!-- Begin scrolling button (See all works)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ============================ -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================ -->
                     <a href="portfolio-grid-creative.html" class="tt-scrolling-btn all-works-btn"
                         data-cursor="All<br>Works">
                         <div class="scr-btn-inner ph-appear">
@@ -700,7 +419,6 @@
             </div>
             <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
         <div class="tt-section padding-top-xlg-120 padding-bottom-xlg-120 bg-white-accent-3">
             <div class="tt-section-inner">>
@@ -714,167 +432,139 @@
             </div>
             <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
 
         <div class="tt-section padding-top-xlg-100 padding-bottom-xlg-100">
             <div class="tt-section-inner">
-                <div
-                  class="tt-content-carousel cursor-drag cc-scale-down cc-hide-pagination cc-pagination-outside cc-hide-navigation"
-                  data-loop="true"
-                  data-simulate-touch="true"
-                  data-speed="900"
-                >
-                  <!-- Begin swiper container -->
-                  <div class="swiper">
-                    <!-- Begin swiper wrapper (required) -->
-                    <div class="swiper-wrapper">
-                      <!-- Begin swiper slide 
-											======================== -->
-                      <div class="swiper-slide">
-                        <div class="tt-content-carousel-item">
-                          <figure>
-                            <img
-                              class="tt-cc-image-client swiper-lazy"
-                              src="https://source.unsplash.com/random/200x200/?logo,dark,1"
-                              data-src="https://source.unsplash.com/random/200x200/?logo,dark,1"
-                              alt="Image"
-                            />
-                            <!-- <figcaption>Image Caption</figcaption> -->
-                          </figure>
-                        </div>
-                        <!-- /.tt-content-carousel-item -->
-                      </div>
-                      <!-- End swiper slide -->
+                <div class="tt-content-carousel is-client cursor-drag cc-scale-down cc-hide-pagination cc-hide-navigation"
+                    data-loop="true" data-simulate-touch="true" data-speed="900">
+                    <!-- Begin swiper container -->
+                    <div class="swiper">
+                        <!-- Begin swiper wrapper (required) -->
+                        <div class="swiper-wrapper">
+                            <!-- Begin swiper slide
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
+                            <div class="swiper-slide">
+                                <div class="tt-content-carousel-item">
+                                    <figure>
+                                        <img class="tt-cc-image-client swiper-lazy"
+                                            src="https://source.unsplash.com/random/200x200/?logo,dark,1"
+                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,1"
+                                            alt="Image" />
+                                        <!-- <figcaption>Image Caption</figcaption> -->
+                                    </figure>
+                                </div>
+                                <!-- /.tt-content-carousel-item -->
+                            </div>
+                            <!-- End swiper slide -->
 
-                      <!-- Begin swiper slide 
-											======================== -->
-                      <div class="swiper-slide">
-                        <div class="tt-content-carousel-item">
-                          <figure>
-                            <img
-                              class="tt-cc-image-client swiper-lazy"
-                              src="https://source.unsplash.com/random/200x200/?logo,dark,2"
-                              data-src="https://source.unsplash.com/random/200x200/?logo,dark,2"
-                              alt="Image"
-                            />
-                            <!-- <figcaption>Image Caption</figcaption> -->
-                          </figure>
-                        </div>
-                        <!-- /.tt-content-carousel-item -->
-                      </div>
-                      <!-- End swiper slide -->
+                            <!-- Begin swiper slide
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
+                            <div class="swiper-slide">
+                                <div class="tt-content-carousel-item">
+                                    <figure>
+                                        <img class="tt-cc-image-client swiper-lazy"
+                                            src="https://source.unsplash.com/random/200x200/?logo,dark,2"
+                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,2"
+                                            alt="Image" />
+                                        <!-- <figcaption>Image Caption</figcaption> -->
+                                    </figure>
+                                </div>
+                                <!-- /.tt-content-carousel-item -->
+                            </div>
+                            <!-- End swiper slide -->
 
-                      <!-- Begin swiper slide 
-											======================== -->
-                      <!-- <div class="swiper-slide">
-												<div class="tt-content-carousel-item">
-													<figure>
-														<video class="tt-cc-video" loop muted preload="metadata" poster="assets/vids/office-team.jpg">
-															<source src="assets/vids/office-team.mp4" type="video/mp4">
-															<source src="assets/vids/office-team.webm" type="video/webm">
-														</video>
-													</figure>
-												</div> 
-												
-											</div>  -->
-                      <!-- End swiper slide -->
+                            <!-- Begin swiper slide
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
+                            <!-- <div class="swiper-slide">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="tt-content-carousel-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <figure>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <video class="tt-cc-video" loop muted preload="metadata" poster="assets/vids/office-team.jpg">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <source src="assets/vids/office-team.mp4" type="video/mp4">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <source src="assets/vids/office-team.webm" type="video/webm">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </video>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </figure>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </div>  -->
+                            <!-- End swiper slide -->
 
-                      <!-- Begin swiper slide 
-											======================== -->
-                      <div class="swiper-slide">
-                        <div class="tt-content-carousel-item">
-                          <figure>
-                            <img
-                              class="tt-cc-image-client swiper-lazy"
-                              src="https://source.unsplash.com/random/200x200/?logo,dark,3"
-                              data-src="https://source.unsplash.com/random/200x200/?logo,dark,3"
-                              alt="Image"
-                            />
-                            <!-- <figcaption>Image Caption</figcaption> -->
-                          </figure>
-                        </div>
-                        <!-- /.tt-content-carousel-item -->
-                      </div>
-                      <!-- End swiper slide -->
+                            <!-- Begin swiper slide
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
+                            <div class="swiper-slide">
+                                <div class="tt-content-carousel-item">
+                                    <figure>
+                                        <img class="tt-cc-image-client swiper-lazy"
+                                            src="https://source.unsplash.com/random/200x200/?logo,dark,3"
+                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,3"
+                                            alt="Image" />
+                                        <!-- <figcaption>Image Caption</figcaption> -->
+                                    </figure>
+                                </div>
+                                <!-- /.tt-content-carousel-item -->
+                            </div>
+                            <!-- End swiper slide -->
 
-                      <!-- Begin swiper slide 
-											======================== -->
-                      <div class="swiper-slide">
-                        <div class="tt-content-carousel-item">
-                          <figure>
-                            <img
-                              class="tt-cc-image-client swiper-lazy"
-                              src="https://source.unsplash.com/random/200x200/?logo,dark,4"
-                              data-src="https://source.unsplash.com/random/200x200/?logo,dark,4"
-                              alt="Image"
-                            />
-                            <!-- <figcaption>Image Caption</figcaption> -->
-                          </figure>
-                        </div>
-                        <!-- /.tt-content-carousel-item -->
-                      </div>
-                      <!-- End swiper slide -->
+                            <!-- Begin swiper slide
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
+                            <div class="swiper-slide">
+                                <div class="tt-content-carousel-item">
+                                    <figure>
+                                        <img class="tt-cc-image-client swiper-lazy"
+                                            src="https://source.unsplash.com/random/200x200/?logo,dark,4"
+                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,4"
+                                            alt="Image" />
+                                        <!-- <figcaption>Image Caption</figcaption> -->
+                                    </figure>
+                                </div>
+                                <!-- /.tt-content-carousel-item -->
+                            </div>
+                            <!-- End swiper slide -->
 
-                      <!-- Begin swiper slide 
-											======================== -->
-                      <div class="swiper-slide">
-                        <div class="tt-content-carousel-item">
-                          <figure>
-                            <img
-                              class="tt-cc-image-client swiper-lazy"
-                              src="https://source.unsplash.com/random/200x200/?logo,dark,5"
-                              data-src="https://source.unsplash.com/random/200x200/?logo,dark,5"
-                              alt="Image"
-                            />
-                            <!-- <figcaption>Image Caption</figcaption> -->
-                          </figure>
+                            <!-- Begin swiper slide
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
+                            <div class="swiper-slide">
+                                <div class="tt-content-carousel-item">
+                                    <figure>
+                                        <img class="tt-cc-image-client swiper-lazy"
+                                            src="https://source.unsplash.com/random/200x200/?logo,dark,5"
+                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,5"
+                                            alt="Image" />
+                                        <!-- <figcaption>Image Caption</figcaption> -->
+                                    </figure>
+                                </div>
+                                <!-- /.tt-content-carousel-item -->
+                            </div>
+                            <!-- End swiper slide -->
                         </div>
-                        <!-- /.tt-content-carousel-item -->
-                      </div>
-                      <!-- End swiper slide -->
+                        <!-- End swiper wrapper -->
                     </div>
-                    <!-- End swiper wrapper -->
-                  </div>
-                  <!-- End swiper container -->
+                    <!-- End swiper container -->
 
-                  <!-- Begin content carousel navigation (arrows) 
-									=================================================== -->
-                  <div class="tt-cc-nav-prev">
-                    <div class="tt-cc-nav-arrow magnetic-item">
-                      <i class="tt-arrow-left"></i>
+                    <!-- Begin content carousel navigation (arrows)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                             =================================================== -->
+                    <div class="tt-cc-nav-prev">
+                        <div class="tt-cc-nav-arrow magnetic-item">
+                            <i class="tt-arrow-left"></i>
+                        </div>
                     </div>
-                  </div>
-                  <div class="tt-cc-nav-next">
-                    <div class="tt-cc-nav-arrow magnetic-item">
-                      <i class="tt-arrow-right"></i>
+                    <div class="tt-cc-nav-next">
+                        <div class="tt-cc-nav-arrow magnetic-item">
+                            <i class="tt-arrow-right"></i>
+                        </div>
                     </div>
-                  </div>
-                  <!-- End content carousel navigation -->
+                    <!-- End content carousel navigation -->
 
-                  <!-- Content carousel pagination -->
-                  <div class="tt-cc-pagination hide-cursor"></div>
+                    <!-- Content carousel pagination -->
+                    <div class="tt-cc-pagination hide-cursor"></div>
                 </div>
                 <!-- End logo wall -->
             </div>
             <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
-        <!-- =======================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      ///// Begin tt-section /////
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      -->
         <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150 bg-white-accent-3">
             <div class="tt-section-inner tt-wrap max-width-1600">
-                <!-- Begin tt-Heading
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              ======================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-heading-stroke" to enable stroke style.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-heading-center" to align tt-Heading to center.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              -->
                 <div class="tt-heading tt-heading-xlg margin-bottom-7-p anim-fadeinup max-width-1250 margin-auto">
                     <h3 class="tt-heading-subtitle">Latest News</h3>
                     <h2 class="tt-heading-title">From the Blog</h2>
@@ -884,289 +574,102 @@
                         <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
                     </a>
                 </div>
-                <!-- End tt-Heading -->
 
-                <!-- ==========================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              ///// Begin blog carousel /////
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              ===============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-blc-shifted" to enable shifted style (no effect on smaller screens!).
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-blc-hide-navigation" to hide navigation.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Available data attributes:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      data-speed="800"......................(milliseconds)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      data-autoplay="5000"..................(milliseconds. Note: disabled after user first interactions)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      data-simulate-touch="true"............(true/false)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      data-pagination-type="bullets"........(bullets/fraction/progressbar)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              -->
+
                 <div class="tt-blog-carousel anim-fadeinup" data-speed="800" data-simulate-touch="true"
                     data-pagination-type="bullets">
-                    <!-- Begin swiper container -->
-                    <div class="swiper">
-                        <!-- Begin swiper wrapper (required) -->
-                        <div class="swiper-wrapper">
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="swiper-slide">
-                                <!-- Begin blog carousel item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================== -->
-                                <div class="tt-blog-carousel-item">
-                                    <a href="blog-post.html" class="tt-bci-image-wrap" data-cursor="Read<br>More">
-                                        <figure class="tt-bci-image">
-                                            <img class="swiper-lazy" src="/assets/img/low-qlt-thumb.jpg"
-                                                data-src="/assets/img/blog/carousel/blog-carousel-1.jpg" alt="Image" />
-                                        </figure>
-                                        <!-- /.tt-bci-image -->
-                                    </a>
-                                    <!-- /.tt-bci-image-wrap -->
+                    @if (count($beritas))
+                        <!-- Begin swiper container -->
+                        <div class="swiper">
+                            <!-- Begin swiper wrapper (required) -->
+                            <div class="swiper-wrapper">
+                                @foreach ($beritas as $berita)
+                                    <div class="swiper-slide">
+                                        <div class="tt-blog-carousel-item">
+                                            <a href="/blog/{{ $berita->kategori->slug }}/{{ $berita->slug }}"
+                                                class="tt-bci-image-wrap" data-cursor="Read<br>More">
+                                                <figure class="tt-bci-image">
+                                                    <img class="swiper-lazy"
+                                                        src="{{ asset('storage/' . $berita->thumbnail) }}"
+                                                        data-src="{{ asset('storage/' . $berita->thumbnail) }}"
+                                                        alt="Guratint {{ $berita->judul }}" />
+                                                </figure>
+                                            </a>
 
-                                    <div class="tt-bci-info">
-                                        <div class="tt-bci-categories">
-                                            <a href="blog-archive.html">Lifestyle</a>
-                                            <!-- <a href="blog-archive.html">Uncategorized</a> -->
+                                            <div class="tt-bci-info">
+                                                <div class="tt-bci-categories">
+                                                    <a href="#detail-kategori">{{ $berita->kategori->nama }}</a>
+                                                </div>
+                                                <h2 class="tt-bci-title">
+                                                    <a href="/blog/{{ $berita->kategori->slug }}/{{ $berita->slug }}">
+                                                        {{ $berita->judul }}
+                                                    </a>
+                                                </h2>
+                                                <div class="tt-bci-meta">
+                                                    <span class="published">{{ $berita->getFormattedDate() }}</span>
+                                                    <span class="posted-by">- by
+                                                        <a href="#detail-kategori">{{ $berita->user->name }}</a></span>
+                                                </div>
+                                                <!-- /.tt-bci-meta -->
+                                            </div>
+                                            <!-- /.tt-bci-inf -->
                                         </div>
-                                        <h2 class="tt-bci-title">
-                                            <a href="blog-post.html">5 Surprising Techniques to Improve
-                                                Your
-                                                Creativity</a>
-                                        </h2>
-                                        <div class="tt-bci-meta">
-                                            <span class="published">May 26, 2022</span>
-                                            <span class="posted-by">- by
-                                                <a href="blog-archive.html" title="View all posts by John Doe">John
-                                                    Doe</a></span>
-                                        </div>
-                                        <!-- /.tt-bci-meta -->
+                                        <!-- End blog carousel item -->
                                     </div>
-                                    <!-- /.tt-bci-inf -->
-                                </div>
-                                <!-- End blog carousel item -->
+                                @endforeach
                             </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="swiper-slide">
-                                <!-- Begin blog carousel item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================== -->
-                                <div class="tt-blog-carousel-item">
-                                    <a href="blog-post.html" class="tt-bci-image-wrap" data-cursor="Read<br>More">
-                                        <figure class="tt-bci-image">
-                                            <img class="swiper-lazy" src="/assets/img/low-qlt-thumb.jpg"
-                                                data-src="/assets/img/blog/carousel/blog-carousel-2.jpg" alt="Image" />
-                                        </figure>
-                                        <!-- /.tt-bci-image -->
-                                    </a>
-                                    <!-- /.tt-bci-image-wrap -->
-
-                                    <div class="tt-bci-info">
-                                        <div class="tt-bci-categories">
-                                            <a href="blog-archive.html">Tutorials</a>
-                                            <!-- <a href="blog-archive.html">Uncategorized</a> -->
-                                        </div>
-                                        <h2 class="tt-bci-title">
-                                            <a href="blog-post.html">Avoid the Top 10 Mistakes Made by
-                                                Beginners</a>
-                                        </h2>
-                                        <div class="tt-bci-meta">
-                                            <span class="published">May 24, 2022</span>
-                                            <span class="posted-by">- by
-                                                <a href="blog-archive.html" title="View all posts by John Doe">John
-                                                    Doe</a></span>
-                                        </div>
-                                        <!-- /.tt-bci-meta -->
-                                    </div>
-                                    <!-- /.tt-bci-inf -->
-                                </div>
-                                <!-- End blog carousel item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="swiper-slide">
-                                <!-- Begin blog carousel item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================== -->
-                                <div class="tt-blog-carousel-item">
-                                    <a href="blog-post.html" class="tt-bci-image-wrap" data-cursor="Read<br>More">
-                                        <figure class="tt-bci-image">
-                                            <img class="swiper-lazy" src="/assets/img/low-qlt-thumb.jpg"
-                                                data-src="/assets/img/blog/carousel/blog-carousel-3.jpg" alt="Image" />
-                                        </figure>
-                                        <!-- /.tt-bci-image -->
-                                    </a>
-                                    <!-- /.tt-bci-image-wrap -->
-
-                                    <div class="tt-bci-info">
-                                        <div class="tt-bci-categories">
-                                            <a href="blog-archive.html">Lifestyle</a>
-                                            <!-- <a href="blog-archive.html">Uncategorized</a> -->
-                                        </div>
-                                        <h2 class="tt-bci-title">
-                                            <a href="blog-post.html">Why Some People Save Money With This
-                                                Method</a>
-                                        </h2>
-                                        <div class="tt-bci-meta">
-                                            <span class="published">May 23, 2022</span>
-                                            <span class="posted-by">- by
-                                                <a href="blog-archive.html" title="View all posts by John Doe">John
-                                                    Doe</a></span>
-                                        </div>
-                                        <!-- /.tt-bci-meta -->
-                                    </div>
-                                    <!-- /.tt-bci-inf -->
-                                </div>
-                                <!-- End blog carousel item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="swiper-slide">
-                                <!-- Begin blog carousel item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================== -->
-                                <div class="tt-blog-carousel-item">
-                                    <a href="blog-post.html" class="tt-bci-image-wrap" data-cursor="Read<br>More">
-                                        <figure class="tt-bci-image">
-                                            <img class="swiper-lazy" src="/assets/img/low-qlt-thumb.jpg"
-                                                data-src="/assets/img/blog/carousel/blog-carousel-4.jpg" alt="Image" />
-                                        </figure>
-                                        <!-- /.tt-bci-image -->
-                                    </a>
-                                    <!-- /.tt-bci-image-wrap -->
-
-                                    <div class="tt-bci-info">
-                                        <div class="tt-bci-categories">
-                                            <a href="blog-archive.html">Inspiration</a>
-                                            <!-- <a href="blog-archive.html">Uncategorized</a> -->
-                                        </div>
-                                        <h2 class="tt-bci-title">
-                                            <a href="blog-post.html">Want to Step Up Your Skills? You Need
-                                                to Read
-                                                This First</a>
-                                        </h2>
-                                        <div class="tt-bci-meta">
-                                            <span class="published">May 21, 2022</span>
-                                            <span class="posted-by">- by
-                                                <a href="blog-archive.html" title="View all posts by John Doe">John
-                                                    Doe</a></span>
-                                        </div>
-                                        <!-- /.tt-bci-meta -->
-                                    </div>
-                                    <!-- /.tt-bci-inf -->
-                                </div>
-                                <!-- End blog carousel item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ======================== -->
-                            <div class="swiper-slide">
-                                <!-- Begin blog carousel item
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================== -->
-                                <div class="tt-blog-carousel-item">
-                                    <a href="blog-post.html" class="tt-bci-image-wrap" data-cursor="Read<br>More">
-                                        <figure class="tt-bci-image">
-                                            <img class="swiper-lazy" src="/assets/img/low-qlt-thumb.jpg"
-                                                data-src="/assets/img/blog/carousel/blog-carousel-5.jpg" alt="Image" />
-                                        </figure>
-                                        <!-- /.tt-bci-image -->
-                                    </a>
-                                    <!-- /.tt-bci-image-wrap -->
-
-                                    <div class="tt-bci-info">
-                                        <div class="tt-bci-categories">
-                                            <a href="blog-archive.html">Tutorials</a>
-                                            <!-- <a href="blog-archive.html">Uncategorized</a> -->
-                                        </div>
-                                        <h2 class="tt-bci-title">
-                                            <a href="blog-post.html">Secrets to Getting Your Project to
-                                                Complete
-                                                Quickly</a>
-                                        </h2>
-                                        <div class="tt-bci-meta">
-                                            <span class="published">May 19, 2022</span>
-                                            <span class="posted-by">- by
-                                                <a href="blog-archive.html" title="View all posts by John Doe">John
-                                                    Doe</a></span>
-                                        </div>
-                                        <!-- /.tt-bci-meta -->
-                                    </div>
-                                    <!-- /.tt-bci-inf -->
-                                </div>
-                                <!-- End blog carousel item -->
-                            </div>
-                            <!-- End swiper slide -->
+                            <!-- End swiper wrapper -->
                         </div>
-                        <!-- End swiper wrapper -->
-                    </div>
-                    <!-- End swiper container -->
+                        <!-- End swiper container -->
 
-                    <!-- Begin blog carousel navigation (arrows)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ============================================= -->
-                    <div class="tt-blc-nav-prev">
-                        <div class="tt-blc-nav-arrow magnetic-item">
-                            <i class="tt-arrow-left"></i>
+                        <div class="tt-blc-nav-prev">
+                            <div class="tt-blc-nav-arrow magnetic-item">
+                                <i class="tt-arrow-left"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tt-blc-nav-next">
-                        <div class="tt-blc-nav-arrow magnetic-item">
-                            <i class="tt-arrow-right"></i>
+                        <div class="tt-blc-nav-next">
+                            <div class="tt-blc-nav-arrow magnetic-item">
+                                <i class="tt-arrow-right"></i>
+                            </div>
                         </div>
-                    </div>
-                    <!-- End blog carousel navigation -->
+                        <!-- End blog carousel navigation -->
 
-                    <!-- Blog carousel pagination -->
-                    <div class="tt-blc-pagination hide-cursor"></div>
+                        <!-- Blog carousel pagination -->
+                        <div class="tt-blc-pagination hide-cursor"></div>
+                    @else
+                        <div class="text-center">
+                            Belum ada Post Blog saat ini!
+                        </div>
+                    @endif
                 </div>
-                <!-- End blog carousel -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
-        <!-- =======================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      ///// Begin tt-section /////
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      -->
         <div class="tt-section padding-top-xlg-150">
             <div class="tt-section-inner tt-wrap max-width-700">
-                <!-- Begin tt-Heading
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              ======================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-heading-stroke" to enable stroke style.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-heading-center" to align tt-Heading to center.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              -->
                 <div class="tt-heading tt-heading-xxlg margin-bottom-8-p anim-fadeinup">
                     <h3 class="tt-heading-subtitle">Get in Touch</h3>
                     <h2 class="tt-heading-title">
                         Let's Work<br />
                         Together!
                     </h2>
-                    <!-- You can use <br> to break a text line if needed -->
                 </div>
-                <!-- End tt-Heading -->
 
-                <!-- Begin form
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              ================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-form-filled" or "tt-form-minimal" to change form style.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              * Use class "tt-form-sm" or "tt-form-lg" to change form size (no class = default size).
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              -->
-                <form id="tt-contact-form" class="tt-form-filled anim-fadeinup">
-                    <!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
-                    <input type="hidden" name="project_name" value="yourwebsiteaddress.com" />
-                    <!-- Change value to your site name -->
-                    <input type="hidden" name="admin_email" value="your@email.com" />
-                    <!-- Change value to your valid email address (where a message will be sent) -->
-                    <input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com" />
-                    <!-- Change value to your own message subject -->
-                    <!-- End Hidden Required Fields -->
+                <form id="tt-contact-form" method="POST" class="tt-form-filled tt-form-sm anim-fadeinup"
+                    action="{{ route('submit.form') }}">
+
+                    @csrf
+
+                    <div class="tt-form-group">
+                        <label>Nama Lengkap <span class="required">*</span></label>
+                        <input class="tt-form-control" type="text" name="nama" required />
+                    </div>
 
                     <div class="tt-row">
                         <div class="tt-col-md-6">
                             <div class="tt-form-group">
-                                <label>Your Name <span class="required">*</span></label>
-                                <input class="tt-form-control" type="text" name="Name" placeholder="" required />
+                                <label>No HP <span class="required">*</span></label>
+                                <input class="tt-form-control" type="number" name="phone" required />
                             </div>
                         </div>
                         <!-- /.tt-col -->
@@ -1174,36 +677,12 @@
                         <div class="tt-col-md-6">
                             <div class="tt-form-group">
                                 <label>Email address <span class="required">*</span></label>
-                                <input class="tt-form-control" type="email" name="Email" placeholder="" required />
+                                <input class="tt-form-control" type="email" name="email" required />
                             </div>
                         </div>
                         <!-- /.tt-col -->
                     </div>
                     <!-- /.tt-row -->
-
-                    <div class="tt-form-group">
-                        <label>Subject <span class="required">*</span></label>
-                        <input class="tt-form-control" type="text" name="Subject" placeholder="" required />
-                    </div>
-
-                    <!-- <div class="tt-form-group">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <label>Select an option <span class="required">*</span></label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <select class="tt-form-control" name="option" required>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <option value="" disabled selected>Please choose an option</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <option value="Say Hello">Say hello</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <option value="New Project">New project</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <option value="Feedback">Feedback</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <option value="Other">Other</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div> -->
-
-                    <div class="tt-form-group">
-                        <label>Your Message <span class="required">*</span></label>
-                        <textarea class="tt-form-control" rows="5" name="Message" placeholder="" required></textarea>
-                    </div>
-
-                    <small class="tt-form-text"><em>Fields marked with an asterisk (*) are
-                            required!</em></small>
 
                     <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
                         <div data-hover="Send Message">Send Message</div>
@@ -1218,3 +697,55 @@
     </div>
     <!-- End page content -->
 @endsection
+@push('css')
+    <link rel="stylesheet" href="/assets/vendor/sweetalert2/sweetalert2.css">
+@endpush
+@push('js')
+    <script src="/assets/vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+        $("#tt-contact-form").submit(function(e) {
+            e.preventDefault();
+
+            var url = $(this).attr('action');
+            let formData = new FormData(this);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: (response) => {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Terimakasih sudah subscribe kami!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    $("#tt-contact-form")[0].reset();
+                },
+                error: function(response) {
+                    var resMsg = response.responseJSON.message;
+
+                    if (resMsg.indexOf('Duplicat Entry')) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'info',
+                            title: 'Validasi Error',
+                            text: 'Email Sudah Terdaftar!',
+                        })
+                    } else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'info',
+                            title: 'Ada kendala teknis. Mohon coba kembali lagi nanti.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                }
+            })
+        })
+    </script>
+@endpush

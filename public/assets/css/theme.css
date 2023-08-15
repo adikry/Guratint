@@ -313,8 +313,8 @@ h6,
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 .custom-zoom {
@@ -338,11 +338,11 @@ h6,
 }
 
 .custom-zoom .wrapper-zoom .content-zoom {
-	position: relative;
+    position: relative;
     width: 100%;
     height: 100%;
-	top: 0;
-	left: 0;
+    top: 0;
+    left: 0;
     overflow: hidden;
 }
 
@@ -355,9 +355,15 @@ h6,
 }
 
 #grow {
-	transform: scale(0.5);
-	will-change: transform;
+    transform: scale(0.5);
+    will-change: transform;
 }
+
+/* @media (min-width: 769px) {
+    .tt-content-carousel .swiper-wrapper {
+        width: 35%;
+    }
+} */
 
 /* ------------------------------------------------------------- *
  * Page transitions
@@ -7018,8 +7024,13 @@ body:not(.tt-np-image-on) .tt-np-ghost {
     transform-style: preserve-3d;
 }
 
+.tt-content-carousel.is-client .swiper-slide {
+    height: 100%;
+    width: auto !important;
+}
+
 @media (min-width: 1025px) {
-    .tt-content-carousel .swiper-slide {
+    .tt-content-carousel:not(.is-client) .swiper-slide {
         height: 100%;
         width: auto;
     }
@@ -8174,10 +8185,23 @@ figcaption .has-tilt {
     padding: 5px 15px;
     font-size: 17px;
     font-weight: normal;
+    position: relative;
+    flex: 1 1 auto;
     color: #fff;
     border: 1px solid rgb(136 136 136 / 65%);
     border-radius: 3px;
 }
+.is-invalid {
+    display: block;
+}
+
+.invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #ae3943;
+}
+
 .tt-form-control:focus {
     color: #fff;
     background-color: transparent;
@@ -8230,6 +8254,10 @@ label {
 
 /* form group */
 .tt-form-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
     margin-bottom: 30px;
 }
 
