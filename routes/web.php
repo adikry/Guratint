@@ -1,5 +1,9 @@
 <?php
 
+use App\Filament\Resources\KontakResource;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::post('/submit', [HomeController::class, 'submit'])->name('submit.form');
+Route::get('/about-us', [HomeController::class, 'about'])->name('about');
+
+Route::controller(PortoController::class)->group(function () {
+    Route::get('/portofolio', 'porto')->name('porto');
+    Route::get('/portofolio/{kategori:slug}', 'portoList');
+    Route::get('/portofolio/{kategori:slug}/{porto:slug}', 'portoDetail');
 });
 
-Route::get('/home', function () {
-    return view('home.index');
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/blog', 'index')->name('blog');
+    Route::get('/blog/{kategori:slug}', 'blogList');
+    Route::get('/blog/{kategori:slug}/{berita:slug}', 'blogDetail');
 });

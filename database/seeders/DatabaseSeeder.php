@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Berita;
+use App\Models\Porto;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +17,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // User::factory(3)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+        // $user = User::factory()->create([
+        //     'name' => 'Admin',
+        //     'email' => 'admin@example.com',
+
         // ]);
+
+        // $role = Role::create(['name' => 'Admin']);
+        // $user->assignRole($role);
+
+        // Berita::factory(20)->create();
+        Porto::factory(7)->create();
     }
 }

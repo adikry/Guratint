@@ -792,7 +792,7 @@
         const content1Animation = gsap.fromTo(
             "#grow-left",
             { x: 0, opacity: 1 },
-            { duration: 1, x: "50%", opacity: 1 }
+            { x: "50%", opacity: 1 }
         );
         const content3Animation = gsap.fromTo(
             "#grow-right",
@@ -3952,28 +3952,6 @@
         }
     });
 
-    // Universal PHP Mail Feedback Script
-    // (https://github.com/agragregra/uniMail)
-    // ========================================
-
-    // E-mail Ajax Send
-    $("#tt-contact-form").submit(function () {
-        // Change (your contact form ID)
-        var th = $(this);
-        $.ajax({
-            type: "POST",
-            url: "mail.php", // Change (mail.php path)
-            data: th.serialize(),
-        }).done(function () {
-            alert("Thank you. Your message has been sent!");
-            setTimeout(function () {
-                // Done Functions
-                th.trigger("reset");
-            }, 800);
-        });
-        return false;
-    });
-
     // =======================================================================================
     // Magic cursor (no effect on small screens!)
     // https://codepen.io/Sahil89/pen/MQbdNR
@@ -4435,53 +4413,53 @@
     // ==========================================================================
 
     // Display style switch button
-    $("#body-inner").prepend(
-        '<div class="tt-style-switch"><div class="tt-stsw-dark"><i class="far fa-moon"></i></div><div class="tt-stsw-light"><i class="fas fa-sun"></i></div></div>'
-    );
+    // $("#body-inner").prepend(
+    //     '<div class="tt-style-switch"><div class="tt-stsw-dark"><i class="far fa-moon"></i></div><div class="tt-stsw-light"><i class="fas fa-sun"></i></div></div>'
+    // );
 
     // Hide magic cursor on button hover
-    if ($("body").hasClass("tt-smooth-scroll")) {
-        $(".tt-style-switch")
-            .on("mouseenter", function () {
-                gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
-            })
-            .on("mouseleave", function () {
-                gsap.to($ball, {
-                    duration: 0.3,
-                    scale: 1,
-                    opacity: $ballOpacity,
-                });
-            });
-    }
+    // if ($("body").hasClass("tt-smooth-scroll")) {
+    //     $(".tt-style-switch")
+    //         .on("mouseenter", function () {
+    //             gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
+    //         })
+    //         .on("mouseleave", function () {
+    //             gsap.to($ball, {
+    //                 duration: 0.3,
+    //                 scale: 1,
+    //                 opacity: $ballOpacity,
+    //             });
+    //         });
+    // }
 
     // Click on style switch
-    $(".tt-style-switch").on("click", function () {
-        $("body").toggleClass("tt-light-style-on");
-        $("body").hasClass("tt-light-style-on")
-            ? (localStorage.setItem("lightstyle", "true"),
-              $(".tt-style-switch").addClass("is-dark"))
-            : (localStorage.setItem("lightstyle", "false"),
-              $(".tt-style-switch").removeClass("is-dark"));
+    // $(".tt-style-switch").on("click", function () {
+    //     $("body").toggleClass("tt-light-style-on");
+    //     $("body").hasClass("tt-light-style-on")
+    //         ? (localStorage.setItem("lightstyle", "true"),
+    //           $(".tt-style-switch").addClass("is-dark"))
+    //         : (localStorage.setItem("lightstyle", "false"),
+    //           $(".tt-style-switch").removeClass("is-dark"));
 
-        location.reload();
-    });
+    //     location.reload();
+    // });
 
     // localStorage
-    var d = localStorage.getItem("lightstyle");
-    d == "true"
-        ? ($("body").addClass("tt-light-style-on"),
-          $(".tt-style-switch").addClass("is-dark"))
-        : ($("body").removeClass("tt-light-style-on"),
-          $(".tt-style-switch").removeClass("is-dark"));
+    // var d = localStorage.getItem("lightstyle");
+    // d == "true"
+    //     ? ($("body").addClass("tt-light-style-on"),
+    //       $(".tt-style-switch").addClass("is-dark"))
+    //     : ($("body").removeClass("tt-light-style-on"),
+    //       $(".tt-style-switch").removeClass("is-dark"));
 
-    // Toggle light stylesheet
-    if ($("body").hasClass("tt-light-style-on")) {
-        $("#tt-themecss").after(
-            '<link id="tt-light-style" rel="stylesheet" href="assets/css/light-style.css">'
-        );
-    } else {
-        $("#tt-light-style").remove();
-    }
+    // // Toggle light stylesheet
+    // if ($("body").hasClass("tt-light-style-on")) {
+    //     $("#tt-themecss").after(
+    //         '<link id="tt-light-style" rel="stylesheet" href="assets/css/light-style.css">'
+    //     );
+    // } else {
+    //     $("#tt-light-style").remove();
+    // }
 
     // End template style switch
     // ==========================
