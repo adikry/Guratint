@@ -4,7 +4,7 @@
         <div class="tt-header-col">
 
             <div class="tt-logo">
-                <a href="index.html">
+                <a href="/">
                     <img src="/assets/img/Logo Guratint.png" class="tt-logo-light magnetic-item" alt="Logo" />
                 </a>
             </div>
@@ -49,11 +49,11 @@
                                 </li>
 
                                 <li class="{{ Request::is('blog*') ? 'active' : '' }}">
-                                    <a href="#">Blog</a>
+                                    <a href="/blog">Blog</a>
                                 </li>
 
                                 <li class="{{ Request::is('contact*') ? 'active' : '' }}">
-                                    <a href="#">Contact</a>
+                                    <a href="/contact">Kontak</a>
                                 </li>
                             </ul>
 
@@ -65,22 +65,16 @@
                                     </h6>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/themetorium" target="_blank"
-                                        rel="noopener">Facebook</a>
+                                    <a href="#" target="_blank" rel="noopener">Facebook</a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com/Themetorium" target="_blank" rel="noopener">Twitter</a>
+                                    <a href="#" target="_blank" rel="noopener">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/" target="_blank" rel="noopener">Youtube</a>
+                                    <a href="#" target="_blank" rel="noopener">Tiktok</a>
                                 </li>
                                 <li>
-                                    <a href="https://dribbble.com/Themetorium" target="_blank"
-                                        rel="noopener">Dribbble</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.behance.net/Themetorium" target="_blank"
-                                        rel="noopener">Behance</a>
+                                    <a href="#" target="_blank" rel="noopener">Youtube</a>
                                 </li>
                             </ul>
                             <!-- End overlay menu social links -->

@@ -7,6 +7,7 @@ use App\Models\Kategori;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -24,8 +25,16 @@ class BlogController extends Controller
 
         // Artikel::latest()->filter(request(['keyword', 'rubrik']))->whereNotNull('published_at')->paginate(9)->withQueryString(),
 
-        $kategories = Kategori::all();
+        $kategories = Kategori::query()
+            ->join('berita', 'kategori_id', '=', 'kategori.id')
+            ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
+            ->where('isActive', '=', 1)
+            ->where('published_at', '!=', null)
+            ->groupBy('kategori.id')
+            ->orderBy('kategori.id')
+            ->get();
         $kategori = null;
+
         return view('blog.index', compact('beritas', 'kategories', 'kategori'));
     }
 
@@ -34,21 +43,24 @@ class BlogController extends Controller
         $beritas = Berita::query()
             ->filter(request(['q']))
             ->where('isActive', '=', 1)
-            ->whereHas('kategori', function (Builder $query) use ($kategori) {
-                $query->where('slug', $kategori);
+            ->whereHas('kategori', function ($query) use ($kategori) {
+                $query->where('slug', '=', $kategori);
             })
             ->where('published_at', '!=', null)
             ->orderBy('published_at', 'desc')
             ->paginate(5)
             ->withQueryString();
 
-        $kategories = Kategori::all();
+        $kategories = Kategori::query()
+            ->join('berita', 'kategori_id', '=', 'kategori.id')
+            ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
+            ->where('published_at', '!=', null)
+            ->where('isActive', '=', 1)
+            ->groupBy('kategori.id')
+            ->orderBy('kategori.id')
+            ->get();
 
-        $titleKat = Kategori::query()
-            ->where('slug', '=', $kategori)
-            ->first();
-
-        return view('blog.index', compact('beritas', 'kategories', 'kategori', 'titleKat'));
+        return view('blog.index', compact('beritas', 'kategories', 'kategori'));
     }
 
     public function blogDetail(string $kategori, Berita $berita): View

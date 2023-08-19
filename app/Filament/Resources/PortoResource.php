@@ -66,34 +66,17 @@ class PortoResource extends Resource
                                             ->prepend(now()->timestamp . "_"),
                                     )
                                     ->required(),
-                                Forms\Components\Textarea::make('desc')
-                                    ->maxLength(255)
-                                    ->autosize(),
                                 Forms\Components\Select::make('kategori_id')
                                     ->relationship('kategori', 'nama')
                                     ->searchable(['nama'])
                                     ->preload()
                                     ->required(),
-                                Forms\Components\DateTimePicker::make('published_at')
-                                    ->placeholder('Tanggal Publikasi')
-                                    ->firstDayOfWeek(7)
-                                    ->displayFormat('d/M/Y'),
                                 Grid::make(2)
                                     ->schema([
-                                        Forms\Components\FileUpload::make('content')
-                                            ->columns(1)
-                                            ->multiple()
-                                            ->reorderable()
-                                            ->image()
-                                            ->maxFiles(4)
-                                            ->maxSize(2048)
-                                            ->directory('porto-content')
-                                            ->preserveFilenames()
-                                            ->getUploadedFileNameForStorageUsing(
-                                                fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                                                    ->prepend(now()->timestamp . "_"),
-                                            )
-                                            ->required(),
+                                        Forms\Components\DateTimePicker::make('published_at')
+                                            ->placeholder('Tanggal Publikasi')
+                                            ->firstDayOfWeek(7)
+                                            ->displayFormat('d/M/Y'),
                                         Group::make()
                                             ->schema([
                                                 Grid::make(2)

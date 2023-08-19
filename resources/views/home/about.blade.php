@@ -1,4 +1,6 @@
-@extends('layout.frontend.main')
+@extends('layout.frontend.main', [
+    'title' => 'Tentang | ',
+])
 @section('container')
     <div id="page-header" class="ph-full ph-cap-lg ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
         <div class="page-header-inner tt-wrap">

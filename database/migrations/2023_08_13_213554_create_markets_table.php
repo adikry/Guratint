@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('market', function (Blueprint $table) {
             $table->id();
             $table->string('applicationName')->unique();
-            $table->string('codeId');
+            $table->string('head');
             $table->foreignIdFor(User::class, 'user_id');
             $table->timestamps();
         });

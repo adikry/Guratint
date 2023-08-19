@@ -16,6 +16,8 @@ class Market extends Model
 
     protected $table = 'market';
 
+    protected $casts = ['isActive' => 'boolean'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');

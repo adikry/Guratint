@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::post('/submit', [HomeController::class, 'submit'])->name('submit.form');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/links', [HomeController::class, 'links'])->name('links');
+Route::get('/jump-to/{clicked:slug}', [HomeController::class, 'click'])->name('link.clicked');
 
 Route::controller(PortoController::class)->group(function () {
     Route::get('/portofolio', 'porto')->name('porto');

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Clicked;
+use App\Models\Client;
 use App\Models\Kategori;
 use App\Models\Kontak;
+use App\Models\Market;
 use App\Models\Porto;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -14,8 +17,13 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function home(): View
     {
+
+        $title = '';
+
+        $market = Market::all();
 
         $kategori = Kategori::all();
         $portos = Porto::query()
@@ -26,6 +34,8 @@ class HomeController extends Controller
             ->orderBy('published_at', 'desc')
             ->get();
 
+        $clients = Client::all();
+
         $beritas = Berita::query()
             ->where('isActive', '=', 1)
             ->where('published_at', '!=', null)
@@ -33,7 +43,7 @@ class HomeController extends Controller
             ->orderBy('published_at', 'desc')
             ->get();
 
-        return view('home.index', compact('kategori', 'portos', 'beritas'));
+        return view('home.index', compact('kategori', 'portos', 'beritas', 'clients', 'market'));
     }
 
     public function submit(Request $request)
@@ -56,5 +66,26 @@ class HomeController extends Controller
             ->where('published_at', '!=', null)
             ->get();
         return view('home.about', compact('portos'));
+    }
+
+    public function contact(): View
+    {
+        return view('home.contact');
+    }
+
+    public function links(): View
+    {
+        $links = Clicked::all();
+
+        return view('links.index', compact('links'));
+    }
+
+    public function click(string $isClikced)
+    {
+        $clicked = Clicked::query()
+            ->where('slug', '=', $isClikced)
+            ->get();
+
+        // ddd($clicked);
     }
 }

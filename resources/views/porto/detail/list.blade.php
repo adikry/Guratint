@@ -1,4 +1,6 @@
-@extends('layout.frontend.main')
+@extends('layout.frontend.main', [
+    'title' => 'Porto | ',
+])
 @push('css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 @endpush
@@ -11,7 +13,6 @@
                     <img src="{{ asset('storage/' . $kategori->thumbnail) }}" alt="Image" />
                 </div>
             </div>
-
 
             <div class="ph-caption">
 
@@ -43,15 +44,15 @@
             <div class="tt-section-inner">
                 <div id="portfolio-grid" class="pgi-hover pgi-cap-center pgi-cap-hover">
                     <div class="tt-grid ttgr-layout-3 ttgr-gap-3">
-                        <div class="tt-grid-items-wrap isotope-items-wrap">
+                        <div class="tt-grid-items-wrap isotope-items-wrap lightgallery">
 
                             @if (count($portos))
                                 @foreach ($portos as $porto)
                                     <div class="tt-grid-item isotope-item">
                                         <div class="ttgr-item-inner">
                                             <div class="portfolio-grid-item">
-                                                <a href="/portofolio/{{ $porto->kategori->slug }}/{{ $porto->slug }}"
-                                                    class="pgi-image-wrap" data-cursor="View<br>Project">
+                                                <a href="{{ asset('storage/' . $porto->thumbnail) }}"
+                                                    class="tt-gallery-item lg-trigger" data-cursor="View">
                                                     <!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
                                                     <div class="pgi-image-holder cover-opacity-2">
                                                         <div class="pgi-image-inner anim-zoomin">
@@ -86,47 +87,42 @@
             </div>
         </div>
 
-        <!-- Begin tt-section -->
+
         <div class="tt-section bg-white-accent-4 padding-top-xlg-80 padding-bottom-xlg-80">
             <div class="tt-section-inner tt-wrap">
 
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="contact.html" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-envelope'></i>">
-                        <div class="tt-pn-title">Let's talk</div>
-                        <div class="tt-pn-hover-title">Let's talk</div>
-                    </a> <!-- /.tt-pn-link -->
-                    <div class="tt-pn-subtitle anim-fadeinup">Get in Touch</div>
+                    <a href="https://api.whatsapp.com/send?phone=089623333085" class="tt-pn-link anim-fadeinup"
+                        data-cursor="<i class='fab fa-whatsapp'></i>">
+                        <div class="tt-pn-title">Hubungi Kami</div>
+                        <div class="tt-pn-hover-title">Hubungi Kami</div>
+                    </a>
+                    <div class="tt-pn-subtitle anim-fadeinup">Mari Bertinta</div>
                 </div>
 
             </div>
         </div>
-        <!-- End tt-section -->
 
 
         <div class="tt-section no-padding">
             <div class="tt-section-inner">
-                <!-- Begin next project -->
                 <div class="tt-next-project np-image-cover-3">
-                    <!-- Use if destination page contains page header image -->
+
                     <div class="tt-np-image">
-                        <img src="/assets/img/portfolio/1920/portfolio-1.jpg" alt="image" />
+                        <img src="{{ asset('storage/' . $next->thumbnail) }}" alt="{{ $next->nama }}" />
                     </div>
 
                     <div class="tt-np-caption">
-                        <div class="tt-np-subtitle">Next Project in Category Portofolio</div>
+                        <div class="tt-np-subtitle">Portofolio Selanjutnya</div>
                         <h2 class="tt-np-title">
-                            <a href="#detail-porto" data-cursor="View<br> Project">Elegant<br />
-                                Women</a>
-                            <!-- You can use <br> to break a text line if needed -->
+                            <a href="/portofolio/{{ $next->slug }}" data-cursor="Next<br>Porto">
+                                {{ $next->nama }}
+                            </a>
                         </h2>
                     </div>
-                    <!-- /.tt-np-caption -->
 
-                    <div class="tt-np-ghost">Next</div>
+                    <div class="tt-np-ghost">Selanjutnya</div>
                 </div>
-                <!-- End next project -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
     @endsection
