@@ -17,7 +17,8 @@
         <h3 class="sidebar-heading">Kategori</h3>
         <ul class="list-unstyled">
             @foreach ($kategories as $kategori)
-                <li><a href="#blogBykategori">{{ $kategori->nama }}</a>
+                <li><a href="/blog/{{ $kategori->slug }}">{{ $kategori->nama }} <span
+                            title="Artikel dalam Kategori">{{ $kategori->total }}</span></a>
                 </li>
             @endforeach
         </ul>

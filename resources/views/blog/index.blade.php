@@ -1,4 +1,6 @@
-@extends('layout.frontend.main')
+@extends('layout.frontend.main', [
+    'title' => 'Blog | ',
+])
 @section('container')
     <div id="page-header" class="ph-cap-lg ph-ghost-scroll ph-image-cropped ph-content-parallax">
         <div class="page-header-inner tt-wrap">
@@ -10,7 +12,7 @@
                 <h1 class="ph-caption-title">
                     <div class="ph-appear">
                         @if ($kategori)
-                            Kategori : {{ $titleKat->nama }}
+                            Kategori : {{ $beritas[0]->kategori->nama }}
                         @else
                             Blog
                         @endif
@@ -38,7 +40,11 @@
 
         <div class="tt-section">
             <div class="tt-section-inner tt-wrap">
-
+                @if (request('q'))
+                    <div class="ph-appear">
+                        <div class="h5">Pencarian dalam : "{{ request('q') }}"</div>
+                    </div>
+                @endif
                 <div class="tt-row">
 
                     <div class="tt-col-lg-8">

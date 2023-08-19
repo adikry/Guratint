@@ -1,14 +1,16 @@
-@extends('layout.frontend.main')
+@extends('layout.frontend.main', [
+    'title' => '',
+])
 @section('container')
     <!-- Begin page header -->
-    <div id="page-header" class="ph-full ph-cap-sm ph-ghost-scroll ph-image-cropped ph-content-parallax">
+    <div id="page-header" class="ph-full ph-cap-sm ph-ghost-scroll ph-image-cover ph-image-cover-4 ph-content-parallax">
         <div class="page-header-inner tt-wrap">
             <div class="bg-circle-line ph-appear"></div>
 
             <!-- Begin page header image -->
             <div class="ph-image">
                 <div class="ph-image-inner">
-                    <img src="/assets/img/branding1.png" alt="Image" />
+                    <img src="/assets/img/UV Print.png" alt="Image" />
                 </div>
             </div>
             <!-- End page header image -->
@@ -65,8 +67,8 @@
                         mengutamakan layanan dan kualitas terbaik.
                     </h5>
                     <div class="anim-fadeinup">
-                        <a href="blog-classic.html" class="tt-btn tt-btn-dark padding-left-15 padding-right-15">
-                            <div data-hover="About Us">About Us</div>
+                        <a href="/about-us" class="tt-btn tt-btn-dark padding-left-15 padding-right-15">
+                            <div data-hover="Tentang Kami">Tentang Kami</div>
                             <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
                         </a>
                     </div>
@@ -81,36 +83,14 @@
             </div>
             <div class="custom-container tt-grid ttgr-layout-3 full-width">
                 <div class="tt-grid-item" id="grow-left">
-                    <a href="portfolio-grid-creative.html" class="tt-scrolling-btn all-works-btn"
-                        data-cursor="All<br>Works">
-                        <div class="scr-btn-inner ph-appear">
-                            <div class="scr-btn-icon">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="scr-btn-spinner">
-                                <svg viewBox="0 0 500 500">
-                                    <defs>
-                                        <path
-                                            d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                                            id="textcircle"></path>
-                                    </defs>
-                                    <!-- If you change the text, you probably need to adjust the CSS so that it fits correctly. Find ".scr-btn-text" in file "theme.css" and adjust it for your needs. -->
-                                    <text dy="30" class="scr-btn-text-1">
-                                        <textPath xlink:href="#textcircle">
-                                            Hubungi Kami - Hubungi Kami -
-                                        </textPath>
-                                    </text>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- /.sdc-inner -->
-                    </a>
+                    <h2 class="tt-heading-title"><a href="#" class="tt-link"
+                            data-cursor="<i class='fab fa-whatsapp'></i>">Whatsapp Saja<span>↗</span></a></h2>
                 </div>
                 <div class="tt-grid-item">
                     <h1 id="grow-tagline-center" class="tagline text-left">&nbsp;</h1>
                 </div>
                 <div class="tt-grid-item" id="grow-right">
-                    <h1 id="grow-tagline-right" class="tagline text-right">Mari&nbsp;Bertinta</h1>
+                    {{-- <h1 id="grow-tagline-right" class="tagline text-right">Mari&nbsp;Bertinta</h1> --}}
                 </div>
             </div>
         </div>
@@ -139,7 +119,8 @@
                                                 </div>
                                             </figure>
 
-                                            <a href="" class="pi-item-title-link skew-on-scroll">
+                                            <a href="/portofolio/{{ $itemKat->slug }}"
+                                                class="pi-item-title-link skew-on-scroll">
                                                 <div class="pi-item-title-link-inner">
                                                     <h2 class="pi-item-title">{{ $itemKat->nama }}</h2>
                                                     <div class="pi-item-hover-title">{{ $itemKat->nama }}</div>
@@ -193,7 +174,7 @@
                             <h5>
                                 Jangan sungkan untuk berdiskusi dengan kami untuk segala kebutuhan Anda.
                             </h5>
-                            <a href="blog-classic.html" class="tt-btn tt-btn-dark padding-left-15 padding-right-15">
+                            <a href="/contact" class="tt-btn tt-btn-dark padding-left-15 padding-right-15">
                                 <div data-hover="Kontak Kami">Kontak Kami</div>
                                 <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
@@ -209,7 +190,7 @@
                             <div class="tt-accordion-item anim-fadeinup">
                                 <div class="tt-accordion-heading">
                                     <div class="tt-ac-head cursor-alter">
-                                        <h3 class="tt-ac-head-title">Order Satu-an</h3>
+                                        <h3 class="tt-ac-head-title">Tanpa Minimal Order</h3>
                                     </div>
 
                                     <div class="tt-accordion-caret-wrap">
@@ -222,9 +203,10 @@
                                 <!-- /.tt-accordion-heading -->
                                 <div class="tt-accordion-content is-open max-width-800">
                                     <p>
-                                        Advantage old had otherwise sincerity dependent
-                                        additions. It in adapted natural hastily is justice.
-                                        Six draw you him <a href="">newspaper assurance</a>.
+                                        Hantu terseram bagi customer printing adalah "MINIMAL ORDER" !! Berbeda dengan kami,
+                                        GURATINT menyediakan layanan TANPA MINIMAL ORDER, order satuan kami akan kerjakan
+                                        dengan memberikan kualitas terbaik. Tentu dengan penyesuain harga yang berteman
+                                        dengan harga produksi.
                                     </p>
                                 </div>
                                 <!-- /.tt-accordion-content -->
@@ -234,7 +216,7 @@
                             <div class="tt-accordion-item anim-fadeinup">
                                 <div class="tt-accordion-heading">
                                     <div class="tt-ac-head cursor-alter">
-                                        <h3 class="tt-ac-head-title">Layanan Cepat</h3>
+                                        <h3 class="tt-ac-head-title">Kualitas Terbaik</h3>
                                         <!-- <div class="tt-accordion-subtext">Vivamus nisi</div> -->
                                     </div>
 
@@ -248,12 +230,9 @@
                                 <!-- /.tt-accordion-heading -->
                                 <div class="tt-accordion-content max-width-800">
                                     <p>
-                                        Allow miles wound place the leave had. To sitting
-                                        subject no improve studied limited. Ye indulgence
-                                        unreserved connection alteration appearance my an
-                                        astonished. Up as seen sent make he they of. Her
-                                        raising and himself pasture believe females. Fancy
-                                        she stuff after aware merit small his.
+                                        Didukung dengan teknologi terkini seperti Print UV, DTF, DTG, Offsett hingga digital
+                                        printing lainnya. Kami akan memberikan kualitas terbaik sesuai dengan kebutuhan
+                                        anda.
                                     </p>
                                 </div>
                                 <!-- /.tt-accordion-content -->
@@ -264,7 +243,7 @@
                                 <div class="tt-accordion-heading">
                                     <div class="tt-ac-head cursor-alter">
                                         <h3 class="tt-ac-head-title">
-                                            Kualitas
+                                            Konsultasi Gratis
                                         </h3>
                                         <!-- <div class="tt-accordion-subtext">Nam min proin eget</div> -->
                                     </div>
@@ -279,12 +258,10 @@
                                 <!-- /.tt-accordion-heading -->
                                 <div class="tt-accordion-content max-width-800">
                                     <p>
-                                        Rank tall boy man them over post now. Off into she
-                                        bed long fat room. Recommend existence curiosity
-                                        perfectly favourite get eat she why daughters. Not
-                                        may too nay busy last song must sell. An newspaper
-                                        assurance discourse ye certainly. Soon gone game and
-                                        why many calm have.
+                                        Dengan trend yang berubah begitu cepat, anda tentu saja membutuhkan TEMAN diskusi
+                                        tentang eksekusi ide cemerlang anda. Jangan sungkan untuk konsultasi atau diskusi
+                                        untuk saling mendukung satu sama lain demi melahirkan sebuah produk atau karya yang
+                                        terbaik.
                                     </p>
                                 </div>
                                 <!-- /.tt-accordion-content -->
@@ -294,7 +271,7 @@
                             <div class="tt-accordion-item anim-fadeinup">
                                 <div class="tt-accordion-heading">
                                     <div class="tt-ac-head cursor-alter">
-                                        <h3 class="tt-ac-head-title">Konsultasi Gratis</h3>
+                                        <h3 class="tt-ac-head-title">Proses Cepat</h3>
                                         <!-- <div class="tt-accordion-subtext">Condimentum sit amet</div> -->
                                     </div>
 
@@ -308,11 +285,10 @@
                                 <!-- /.tt-accordion-heading -->
                                 <div class="tt-accordion-content max-width-800">
                                     <p>
-                                        To sure calm much most long me mean. Able rent long
-                                        in do we. Uncommonly no it announcing melancholy an
-                                        in. Mirth learn it he given. Secure shy favour
-                                        length all twenty denote. He felicity no an at
-                                        packages answered opinions juvenile.
+                                        Pesanan anda akan menjadi prioritas kami, dengan Same Day Process kami berharap bisa
+                                        membantu anda dalam project yang membutuhkan waktu cepat. Sangkuriang dengan
+                                        Tangkuban Perahu nya yang gagal meminang Dayang Sumbi, namun kami akan buktikan
+                                        cinta kami untuk anda dalam bentuk Same Day Process.
                                     </p>
                                 </div>
                                 <!-- /.tt-accordion-content -->
@@ -344,20 +320,17 @@
                                 <div class="tt-grid-item isotope-item">
                                     <div class="ttgr-item-inner">
                                         <div class="portfolio-grid-item">
-                                            <a href="#detailPorto" class="pgi-image-wrap" data-cursor="View<br>Project">
+                                            <a href="/portofolio/{{ $porto->kategori->slug }}" class="pgi-image-wrap"
+                                                data-cursor="View<br>Project">
                                                 <div class="pgi-image-holder cover-opacity-2">
                                                     <div class="pgi-image-inner anim-zoomin">
                                                         <figure class="pgi-image ttgr-height">
                                                             <img src="{{ asset('storage/' . $porto->thumbnail) }}"
                                                                 alt="guratint project {{ $porto->nama }}" />
                                                         </figure>
-                                                        <!-- /.pgi-image -->
                                                     </div>
-                                                    <!-- /.pgi-image-inner -->
                                                 </div>
-                                                <!-- /.pgi-image-holder -->
                                             </a>
-                                            <!-- /.pgi-image-wrap -->
 
                                             <div class="pgi-caption">
                                                 <div class="pgi-caption-inner">
@@ -367,30 +340,22 @@
                                                     <div class="pgi-categories-wrap">
                                                         <div class="pgi-category">{{ $porto->kategori->nama }}</div>
                                                     </div>
-                                                    <!-- /.pli-categories-wrap -->
                                                 </div>
-                                                <!-- /.pgi-caption-inner -->
                                             </div>
-                                            <!-- /.pgi-caption -->
                                         </div>
-                                        <!-- End portfolio grid item -->
+
                                     </div>
-                                    <!-- /.ttgr-item-inner -->
                                 </div>
-                                <!-- End tt-Grid item -->
                             @endforeach
                         </div>
-                        <!-- End tt-Grid items wrap  -->
+
                     </div>
-                    <!-- End tt-Grid -->
+
                 </div>
-                <!-- End portfolio grid -->
+
 
                 <div class="text-center anim-fadeinup">
-                    <!-- Begin scrolling button (See all works)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================ -->
-                    <a href="portfolio-grid-creative.html" class="tt-scrolling-btn all-works-btn"
-                        data-cursor="All<br>Works">
+                    <a href="/portofolio" class="tt-scrolling-btn all-works-btn" data-cursor="All<br>Works">
                         <div class="scr-btn-inner ph-appear">
                             <div class="scr-btn-icon">
                                 <i class="fas fa-arrow-right"></i>
@@ -411,17 +376,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <!-- /.sdc-inner -->
+
                     </a>
-                    <!-- End scrolling button -->
                 </div>
-                <!-- /.text-center -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
 
         <div class="tt-section padding-top-xlg-120 padding-bottom-xlg-120 bg-white-accent-3">
-            <div class="tt-section-inner">>
+            <div class="tt-section-inner">
                 <div class="tt-scrolling-text scr-text-stroke scr-text-reverse" data-scroll-speed="5">
                     <div class="tt-scrolling-text-inner" data-text="Guratint → Teman Bertinta →">
                         Guratint → Teman Bertinta →
@@ -433,116 +395,32 @@
             <!-- /.tt-section-inner -->
         </div>
 
-
         <div class="tt-section padding-top-xlg-100 padding-bottom-xlg-100">
             <div class="tt-section-inner">
                 <div class="tt-content-carousel is-client cursor-drag cc-scale-down cc-hide-pagination cc-hide-navigation"
                     data-loop="true" data-simulate-touch="true" data-speed="900">
-                    <!-- Begin swiper container -->
+
                     <div class="swiper">
-                        <!-- Begin swiper wrapper (required) -->
+
                         <div class="swiper-wrapper">
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,1"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,1"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,2"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,2"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
-                            <!-- <div class="swiper-slide">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="tt-content-carousel-item">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <figure>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <video class="tt-cc-video" loop muted preload="metadata" poster="assets/vids/office-team.jpg">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <source src="assets/vids/office-team.mp4" type="video/mp4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <source src="assets/vids/office-team.webm" type="video/webm">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </video>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </figure>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </div>  -->
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,3"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,3"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,4"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,4"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ======================== -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,5"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,5"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
+                            @if ($clients)
+                                @foreach ($clients as $client)
+                                    <div class="swiper-slide">
+                                        <div class="tt-content-carousel-item">
+                                            <figure>
+                                                <img class="tt-cc-image-client swiper-lazy"
+                                                    src="{{ asset('storage/' . $client->logo) }}"
+                                                    data-src="{{ asset('storage/' . $client->logo) }}" alt="Image" />
+                                            </figure>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
-                        <!-- End swiper wrapper -->
-                    </div>
-                    <!-- End swiper container -->
 
-                    <!-- Begin content carousel navigation (arrows)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                             =================================================== -->
+                    </div>
+
+
                     <div class="tt-cc-nav-prev">
                         <div class="tt-cc-nav-arrow magnetic-item">
                             <i class="tt-arrow-left"></i>
@@ -553,14 +431,10 @@
                             <i class="tt-arrow-right"></i>
                         </div>
                     </div>
-                    <!-- End content carousel navigation -->
 
-                    <!-- Content carousel pagination -->
                     <div class="tt-cc-pagination hide-cursor"></div>
                 </div>
-                <!-- End logo wall -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
 
         <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150 bg-white-accent-3">
@@ -672,7 +546,6 @@
                                 <input class="tt-form-control" type="number" name="phone" required />
                             </div>
                         </div>
-                        <!-- /.tt-col -->
 
                         <div class="tt-col-md-6">
                             <div class="tt-form-group">
@@ -680,22 +553,17 @@
                                 <input class="tt-form-control" type="email" name="email" required />
                             </div>
                         </div>
-                        <!-- /.tt-col -->
                     </div>
-                    <!-- /.tt-row -->
 
                     <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
                         <div data-hover="Send Message">Send Message</div>
                         <span class="tt-btn-icon"><i class="fas fa-paper-plane"></i></span>
                     </button>
                 </form>
-                <!-- End form -->
+
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
     </div>
-    <!-- End page content -->
 @endsection
 @push('css')
     <link rel="stylesheet" href="/assets/vendor/sweetalert2/sweetalert2.css">

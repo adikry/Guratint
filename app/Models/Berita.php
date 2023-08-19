@@ -22,6 +22,8 @@ class Berita extends Model
         'published_at' => 'datetime'
     ];
 
+    protected $with = ['user', 'kategori'];
+
 
     public function scopeFilter($query, array $filters)
     {

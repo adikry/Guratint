@@ -23,7 +23,20 @@ class PortoController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
-        return view('porto.detail.list', compact('kategori', 'portos'));
+
+        if ($kategori->id === 8) {
+            $kategori->id = 1;
+        } else {
+            $kategori->id += +1;
+        }
+
+        $next = Kategori::query()
+            ->where('id', '=', $kategori->id)
+            ->limit(1)
+            ->first();
+
+
+        return view('porto.detail.list', compact('kategori', 'portos', 'next'));
     }
 
     public function portoDetail(string $kategori, Porto $porto): View
@@ -32,6 +45,7 @@ class PortoController extends Controller
             ->where('slug', '!=', $porto->slug)
             ->inRandomOrder()
             ->first();
+
         return view('porto.detail.index', compact('kategori', 'porto', 'newData'));
     }
 }

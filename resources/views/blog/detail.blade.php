@@ -1,4 +1,6 @@
-@extends('layout.frontend.main')
+@extends('layout.frontend.main', [
+    'title' => 'Blog | ',
+])
 @section('container')
     <div id="page-header" class="ph-cap-sm ph-bg-image ph-ghost-scroll ph-image-cover-6 ph-content-parallax">
         <div class="page-header-inner tt-wrap">
@@ -99,7 +101,7 @@
 
 
                         <!-- Begin blog post nav
-                                                                                        ======================== -->
+                                                                                            ======================== -->
                         <div class="tt-blog-post-nav">
                             <div class="tt-bp-nav-col tt-bp-nav-left">
                                 <div class="tt-bp-nav-text">
@@ -139,9 +141,9 @@
                     <div class="tt-col-lg-4">
 
                         <!-- Begin sidebar (classic)
-                                                                                        =============================
-                                                                                        Note: add class "tt-lg-row-reverse" to "tt-row" above to align sidebar to the left.
-                                                                                        -->
+                                                                                            =============================
+                                                                                            Note: add class "tt-lg-row-reverse" to "tt-row" above to align sidebar to the left.
+                                                                                            -->
                         <div class="tt-sidebar">
 
                             <!-- Begin sidebar widget -->
@@ -149,10 +151,10 @@
                                 <h3 class="sidebar-heading">Search</h3>
 
                                 <!-- Begin form (Note: for design purposes only!)
-                                                                                                ================
-                                                                                                * Use class "tt-form-filled" or "tt-form-minimal" to change form style.
-                                                                                                * Use class "tt-form-sm" or "tt-form-lg" to change form size (no class = default size).
-                                                                                                -->
+                                                                                                    ================
+                                                                                                    * Use class "tt-form-filled" or "tt-form-minimal" to change form style.
+                                                                                                    * Use class "tt-form-sm" or "tt-form-lg" to change form size (no class = default size).
+                                                                                                    -->
                                 <form>
                                     <div class="tt-form-btn-inside">
                                         <input class="tt-form-control" type="text" id="search"
@@ -321,18 +323,18 @@
 
 
         <!-- =======================
-                                                                        ///// Begin tt-section /////
-                                                                        ============================
-                                                                        * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-                                                                        -->
+                                                                            ///// Begin tt-section /////
+                                                                            ============================
+                                                                            * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+                                                                            -->
         <div class="tt-section padding-bottom-xlg-150">
             <div class="tt-section-inner tt-wrap">
 
                 <!-- Begin page nav
-                                                                                ====================
-                                                                                * Use class "tt-pn-center" to align page nav to center.
-                                                                                * Use class "tt-pn-stroke" to enable title stroke style.
-                                                                                -->
+                                                                                    ====================
+                                                                                    * Use class "tt-pn-center" to align page nav to center.
+                                                                                    * Use class "tt-pn-stroke" to enable title stroke style.
+                                                                                    -->
                 <div class="tt-page-nav tt-pn-stroke">
                     <a href="portfolio-grid-creative.html" class="tt-pn-link anim-fadeinup"
                         data-cursor="<i class='fas fa-arrow-right'></i>">

@@ -4,19 +4,36 @@
 <head>
 
     <title>
-        Guratint - Teman Bertinta
+        {{ $title }}Guratint - Digital Printing
     </title>
 
     <!-- Meta -->
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="description"
-        content="Solusi untuk membantu anda dalam berkreasi dalam bidang printing, bergabung bersama kami menjadi teman bertinta." />
+        content="Solusi untuk membantu anda dalam berkreasi dalam bidang digital printing, uv printing, dan persoalan tentang printing. Bergabung bersama kami menjadi teman bertinta." />
     <!-- Mobile Meta -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Favicon (http://www.favicon-generator.org/) -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    {{-- Google Tag Manager --}}
+    @if ($market)
+        @foreach ($market as $item)
+            @if ($item->applicationName === 'googleTag')
+                {!! $item->head !!}
+            @endif
+        @endforeach
+    @endif
+
 
     <!-- Google Analytics -->
     <!-- Add your Google Analytics code here. -->
@@ -48,25 +65,19 @@
     <link id="tt-themecss" rel="stylesheet" href="/assets/css/theme.css" />
 </head>
 
-<!-- ===========
- ///// Body /////
- ================
- * Use class "tt-boxed" to enable page boxed layout globally (affects all elements containing class "tt-wrap").
- * Use class "tt-smooth-scroll" to enable page smooth scrolling.
- * Use class "tt-transition" to enable page transitions.
- * Use class "tt-magic-cursor" to enable magic cursor.
- * Note: there may be classes that are specific to this page only!
- -->
 
 <body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+    @if ($market)
+        @foreach ($market as $item)
+            @if ($item->applicationName === 'googleTag')
+                {!! $item->body !!}
+            @endif
+        @endforeach
+    @endif
 
-    <!-- *************************************
-  *********** Begin body inner *************
-  ************************************** -->
+
     <main id="body-inner">
 
-        <!-- Begin page transition (do not remove!!!)
-                  =========================== -->
         <div id="page-transition">
             <div class="ptr-overlay"></div>
             <div class="ptr-preloader">
@@ -78,70 +89,40 @@
             </div>
             <!-- /.ptr-preloader -->
         </div>
-        <!-- End page transition -->
 
-        <!-- Begin magic cursor
-                  ======================== -->
+
         <div id="magic-cursor">
             <div id="ball"></div>
         </div>
-        <!-- End magic cursor -->
 
-        <!-- *****************************************
-                  *********** Begin scroll container ***********
-                  ****************************************** -->
+
         <div id="scroll-container">
 
             @include('layout.frontend.navbar')
-            <!-- *************************************
-                      *********** Begin content wrap ***********
-                      ************************************** -->
+
             <div id="content-wrap">
                 @yield('container')
                 @include('layout.frontend.footer')
             </div>
-            <!-- End content wrap -->
 
         </div>
-        <!-- End scroll container -->
 
     </main>
-    <!-- End body inner -->
 
-    <!-- ====================
-  ///// Scripts below /////
-  ===================== -->
-
-    <!-- Core JS -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
-    <!-- jquery JS (https://jquery.com) -->
-
-    <!-- Libs and Plugins JS -->
     <script src="/assets/vendor/gsap/gsap.min.js"></script>
-    <!-- GSAP JS (https://greensock.com/gsap/) -->
     <script src="/assets/vendor/gsap/ScrollToPlugin.min.js"></script>
-    <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
     <script src="/assets/vendor/gsap/ScrollTrigger.min.js"></script>
-    <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
-
     <script src="/assets/vendor/smooth-scrollbar.js"></script>
-    <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
     <script src="/assets/vendor/swiper/js/swiper-bundle.min.js"></script>
-    <!-- Swiper JS (https://swiperjs.com/) -->
     <script src="/assets/vendor/isotope/imagesloaded.pkgd.min.js"></script>
-    <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
     <script src="/assets/vendor/isotope/isotope.pkgd.min.js"></script>
-    <!-- Isotope JS (http://isotope.metafizzy.co) -->
     <script src="/assets/vendor/isotope/packery-mode.pkgd.min.js"></script>
-    <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
     <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
-    <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
     <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
-    <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
 
     @stack('js')
 
-    <!-- Template master JS -->
     <script src="/assets/js/theme.js"></script>
 </body>
 

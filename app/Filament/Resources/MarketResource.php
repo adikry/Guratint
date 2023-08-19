@@ -7,9 +7,11 @@ use App\Filament\Resources\MarketResource\RelationManagers;
 use App\Models\Market;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -40,8 +42,13 @@ class MarketResource extends Resource
                                 'googleAnalytics' => 'Google Analytics',
                             ])
                             ->unique(ignoreRecord: true),
-                        Forms\Components\TextInput::make('codeId')
-                            ->required(),
+                        Toggle::make('isActive')
+                            ->inline(false),
+                        Forms\Components\Textarea::make('head')
+                            ->required()
+                            ->rows(4),
+                        Forms\Components\Textarea::make('body')
+                            ->rows(4),
                     ])->columns(2)
             ]);
     }
@@ -52,8 +59,7 @@ class MarketResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('applicationName')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('codeId')
-                    ->searchable(),
+                ToggleColumn::make('isActive'),
                 Tables\Columns\TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),

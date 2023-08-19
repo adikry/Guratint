@@ -1,7 +1,10 @@
-@extends('layout.frontend.main')
+@extends('layout.frontend.main', [
+    'title' => 'Porto | ',
+])
 @section('container')
     <div id="page-header" class="ph-cap-lg ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
         <div class="page-header-inner tt-wrap">
+
             <div class="ph-caption">
                 <div class="ph-caption-subtitle">
                     <div class="ph-appear">Project Guratint</div>
@@ -13,12 +16,9 @@
                     <div class="ph-appear">Portfolio</div>
                 </div>
             </div>
-            <!-- End page header caption -->
-        </div>
-        <!-- /.page-header-inner -->
 
-        <!-- Begin scroll down (you can change "data-offset" to set scroll top offset)
-                                                  ======================= -->
+        </div>
+
         <div class="tt-scroll-down">
             <a href="#page-content" class="tt-sd-inner ph-appear" data-offset="0">
                 <div class="tt-sd-arrow">
@@ -27,7 +27,7 @@
                 <div class="tt-sd-text">Scroll</div>
             </a>
         </div>
-        <!-- End scroll down -->
+
     </div>
     <div id="page-content">
         <div class="tt-section">
@@ -63,40 +63,24 @@
                                 </div>
                             @endforeach
                         </div>
-                        <!-- End tt-Grid items wrap  -->
                     </div>
-                    <!-- End tt-Grid -->
                 </div>
-                <!-- End portfolio grid -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
-        <!-- =======================
-                                                            ///// Begin tt-section /////
-                                                            ============================
-                                                            * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-                                                            -->
         <div class="tt-section padding-bottom-xlg-150">
             <div class="tt-section-inner tt-wrap">
-                <!-- Begin page nav
-                                                                    ====================
-                                                                    * Use class "tt-pn-center" to align page nav to center.
-                                                                    * Use class "tt-pn-stroke" to enable title stroke style.
-                                                                    -->
+
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="contact.html" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-envelope'></i>">
-                        <div class="tt-pn-title">Let's talk</div>
-                        <div class="tt-pn-hover-title">Let's talk</div>
+                    <a href="https://api.whatsapp.com/send?phone=089623333085" class="tt-pn-link anim-fadeinup"
+                        data-cursor="<i class='fab fa-whatsapp'></i>">
+                        <div class="tt-pn-title">Hubungi Kami</div>
+                        <div class="tt-pn-hover-title">Hubungi Kami</div>
                     </a>
-                    <!-- /.tt-pn-link -->
-                    <div class="tt-pn-subtitle anim-fadeinup">Get in Touch</div>
+                    <div class="tt-pn-subtitle anim-fadeinup">Mari Berteman</div>
                 </div>
-                <!-- End page nav -->
+
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
     </div>
 @endsection
