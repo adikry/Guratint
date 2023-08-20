@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\Kategori;
+use App\Models\Market;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -15,6 +16,9 @@ class BlogController extends Controller
 {
     public function index(Request $request): View
     {
+
+        $market = Market::all();
+
         $beritas = Berita::query()
             ->filter(request(['q']))
             ->where('isActive', '=', 1)
@@ -35,7 +39,7 @@ class BlogController extends Controller
             ->get();
         $kategori = null;
 
-        return view('blog.index', compact('beritas', 'kategories', 'kategori'));
+        return view('blog.index', compact('beritas', 'kategories', 'kategori', 'market'));
     }
 
     public function blogList(string $kategori, Request $request): View
@@ -60,7 +64,9 @@ class BlogController extends Controller
             ->orderBy('kategori.id')
             ->get();
 
-        return view('blog.index', compact('beritas', 'kategories', 'kategori'));
+        $market = Market::all();
+
+        return view('blog.index', compact('beritas', 'kategories', 'kategori', 'market'));
     }
 
     public function blogDetail(string $kategori, Berita $berita): View
@@ -86,6 +92,17 @@ class BlogController extends Controller
             ->limit(1)
             ->first();
 
-        return view('blog.detail', compact('kategori', 'berita', 'next', 'prev'));
+        $market = Market::all();
+
+        $kategories = Kategori::query()
+            ->join('berita', 'kategori_id', '=', 'kategori.id')
+            ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
+            ->where('published_at', '!=', null)
+            ->where('isActive', '=', 1)
+            ->groupBy('kategori.id')
+            ->orderBy('kategori.id')
+            ->get();
+
+        return view('blog.detail', compact('kategori', 'berita', 'next', 'prev', 'market', 'kategories'));
     }
 }

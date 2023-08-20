@@ -17,18 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::post('/submit', [HomeController::class, 'submit'])->name('submit.form');
-Route::get('/about-us', [HomeController::class, 'about'])->name('about');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/links', [HomeController::class, 'links'])->name('links');
-Route::get('/jump-to/{clicked:slug}', [HomeController::class, 'click'])->name('link.clicked');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'home')->name('home');
+    Route::post('/submit', 'submit')->name('submit.form');
+    Route::get('/about-us', 'about')->name('about');
+    Route::get('/contact', 'contact')->name('contact');
+    Route::get('/links', 'links')->name('links');
+    Route::get('/jump-to/{clicked:slug}', 'click')->name('link.clicked');
+});
 
 Route::controller(PortoController::class)->group(function () {
     Route::get('/portofolio', 'porto')->name('porto');
     Route::get('/portofolio/{kategori:slug}', 'portoList');
-    Route::get('/portofolio/{kategori:slug}/{porto:slug}', 'portoDetail');
 });
 
 Route::controller(BlogController::class)->group(function () {

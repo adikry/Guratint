@@ -1,6 +1,21 @@
 @extends('layout.frontend.main', [
     'title' => 'Kontak | ',
 ])
+
+@push('head')
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GuraTint" />
+    <meta property="og:title" content="Guratint | Teman Bertinta" />
+    <meta property="og:description"
+        content="Solusi untuk membantu anda dalam berkreasi dalam bidang digital printing, uv printing, dan persoalan tentang printing. Bergabung bersama kami menjadi teman bertinta." />
+    <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:image" content="{{ asset('storage/logo/header.jpg') }}">
+    <meta property="og:image:width" content="526">
+    <meta property="og:image:height" content="275">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary">
+@endpush
+
 @section('container')
     <div id="page-header" class="ph-full ph-cap-xxlg ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
         <div class="page-header-inner tt-wrap">

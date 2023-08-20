@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Market;
 use App\Models\Porto;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,9 +12,12 @@ class PortoController extends Controller
 {
     public function porto(): View
     {
+
+        $market = Market::all();
+
         $kategori = Kategori::all();
 
-        return view('porto.index', compact('kategori'));
+        return view('porto.index', compact('kategori', 'market'));
     }
 
     public function portoList(Kategori $kategori): View
@@ -23,6 +27,8 @@ class PortoController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
+
+        $market = Market::all();
 
         if ($kategori->id === 8) {
             $kategori->id = 1;
@@ -35,17 +41,6 @@ class PortoController extends Controller
             ->limit(1)
             ->first();
 
-
-        return view('porto.detail.list', compact('kategori', 'portos', 'next'));
-    }
-
-    public function portoDetail(string $kategori, Porto $porto): View
-    {
-        $newData = Porto::query()
-            ->where('slug', '!=', $porto->slug)
-            ->inRandomOrder()
-            ->first();
-
-        return view('porto.detail.index', compact('kategori', 'porto', 'newData'));
+        return view('porto.detail.list', compact('kategori', 'portos', 'next', 'market'));
     }
 }

@@ -25,6 +25,8 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
 
+    @stack('head')
+
     {{-- Google Tag Manager --}}
     @if ($market)
         @foreach ($market as $item)
@@ -47,6 +49,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <!-- Secondary/Alter font -->
 
+    <link rel="canonical" href="https://guratint.id/">
+
     <!-- Libs and Plugins CSS -->
     <link rel="stylesheet" href="/assets/vendor/normalize/normalize.min.css" />
     <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
@@ -56,8 +60,6 @@
     <!-- Swiper CSS (https://swiperjs.com/) -->
     <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
     <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
-
-    @stack('head')
     @stack('css')
 
     <!-- Template master CSS -->
