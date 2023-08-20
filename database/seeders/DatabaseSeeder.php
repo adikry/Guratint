@@ -19,16 +19,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(3)->create();
 
-        // $user = User::factory()->create([
-        //     'name' => 'Admin',
-        //     'email' => 'admin@example.com',
+        $user = User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
 
-        // ]);
+        ]);
 
-        // $role = Role::create(['name' => 'Admin']);
-        // $user->assignRole($role);
+        $role = Role::create(['name' => 'Admin']);
+        $user->assignRole($role);
 
         // Berita::factory(20)->create();
-        Porto::factory(7)->create();
+        // Porto::factory(7)->create();
     }
 }
