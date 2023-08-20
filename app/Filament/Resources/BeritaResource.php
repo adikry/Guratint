@@ -23,7 +23,7 @@ class BeritaResource extends Resource
 {
     protected static ?string $model = Berita::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     protected static ?string $navigationGroup = 'Konten';
 
@@ -79,15 +79,11 @@ class BeritaResource extends Resource
                                             ->required()
                                             ->image()
                                             ->maxSize(2048)
-                                            ->directory('blog-head')
-                                            ->preserveFilenames()
-                                            ->getUploadedFileNameForStorageUsing(
-                                                fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                                                    ->prepend(now()->timestamp . "_"),
-                                            ),
+                                            ->directory('blog-head'),
                                         Forms\Components\DateTimePicker::make('published_at')
                                             ->placeholder('Tanggal Publikasi')
                                             ->firstDayOfWeek(7)
+                                            ->default(now())
                                             ->displayFormat('d/M/Y'),
                                         Toggle::make('isActive')
                                             ->inline(false),

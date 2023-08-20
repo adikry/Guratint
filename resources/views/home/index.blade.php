@@ -334,9 +334,9 @@
 
                 <div id="portfolio-grid" class="pgi-hover">
                     <div class="tt-grid ttgr-layout-creative-2 ttgr-gap-4">
-                        <div class="tt-grid-items-wrap isotope-items-wrap">
+                        <div class="tt-grid-items-wrap">
                             @foreach ($portos as $porto)
-                                <div class="tt-grid-item isotope-item">
+                                <div class="tt-grid-item">
                                     <div class="ttgr-item-inner">
                                         <div class="portfolio-grid-item">
                                             <a href="/portofolio/{{ $porto->kategori->slug }}" class="pgi-image-wrap"
@@ -354,7 +354,7 @@
                                             <div class="pgi-caption">
                                                 <div class="pgi-caption-inner">
                                                     <h2 class="pgi-title">
-                                                        <a href="#detail-project">{{ $porto->nama }}</a>
+                                                        {{ $porto->nama }}
                                                     </h2>
                                                     <div class="pgi-categories-wrap">
                                                         <div class="pgi-category">{{ $porto->kategori->nama }}</div>
@@ -491,7 +491,8 @@
 
                                             <div class="tt-bci-info">
                                                 <div class="tt-bci-categories">
-                                                    <a href="#detail-kategori">{{ $berita->kategori->nama }}</a>
+                                                    <a
+                                                        href="/blog/{{ $berita->kategori->slug }}">{{ $berita->kategori->nama }}</a>
                                                 </div>
                                                 <h2 class="tt-bci-title">
                                                     <a href="/blog/{{ $berita->kategori->slug }}/{{ $berita->slug }}">
@@ -501,7 +502,7 @@
                                                 <div class="tt-bci-meta">
                                                     <span class="published">{{ $berita->getFormattedDate() }}</span>
                                                     <span class="posted-by">- by
-                                                        <a href="#detail-kategori">{{ $berita->user->name }}</a></span>
+                                                        {{ $berita->user->name }}</span>
                                                 </div>
                                                 <!-- /.tt-bci-meta -->
                                             </div>

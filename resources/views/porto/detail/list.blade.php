@@ -16,6 +16,9 @@
     <meta name="twitter:card" content="summary">
 @endpush
 
+@push('css')
+    <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
+@endpush
 
 @section('container')
     <div id="page-header" class="ph-full ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
@@ -57,11 +60,11 @@
             <div class="tt-section-inner">
                 <div id="portfolio-grid" class="pgi-hover pgi-cap-center pgi-cap-hover">
                     <div class="tt-grid ttgr-layout-3 ttgr-gap-3">
-                        <div class="tt-grid-items-wrap isotope-items-wrap lightgallery">
+                        <div class="tt-grid-items-wrap lightgallery">
 
                             @if (count($portos))
                                 @foreach ($portos as $porto)
-                                    <div class="tt-grid-item isotope-item">
+                                    <div class="tt-grid-item">
                                         <div class="ttgr-item-inner">
                                             <div class="portfolio-grid-item">
                                                 <a href="{{ asset('storage/' . $porto->thumbnail) }}"
@@ -80,8 +83,7 @@
                                                 <div class="pgi-caption">
                                                     <div class="pgi-caption-inner">
                                                         <h2 class="pgi-title">
-                                                            <a
-                                                                href="/portofolio/{{ $porto->kategori->slug }}/{{ $porto->slug }}">{{ $porto->nama }}</a>
+                                                            <a href="#">{{ $porto->nama }}</a>
                                                         </h2>
                                                     </div>
                                                 </div>
@@ -140,3 +142,7 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+@endpush

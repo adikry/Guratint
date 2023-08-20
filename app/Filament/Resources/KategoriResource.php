@@ -15,6 +15,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -46,17 +47,13 @@ class KategoriResource extends Resource
                     }),
                 TextInput::make('slug')
                     ->required()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('thumbnail')
                     ->required()
                     ->image()
                     ->maxSize(2048)
-                    ->directory('kategori-head')
-                    ->preserveFilenames()
-                    ->getUploadedFileNameForStorageUsing(
-                        fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                            ->prepend(now()->timestamp . "_"),
-                    ),
+                    ->directory('kategori-head'),
             ]);
     }
 
@@ -77,7 +74,12 @@ class KategoriResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->before(function (Model $record, array $data) {
+                        if ($record->thumbnail != $data['thumbnail']) {
+                            Storage::delete($record->thumbnail);
+                        }
+                    }),
                 Tables\Actions\DeleteAction::make()
                     ->before(function ($record) {
                         Storage::delete($record->thumbnail);
