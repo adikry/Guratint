@@ -1,6 +1,20 @@
 @extends('layout.frontend.main', [
     'title' => 'Blog | ',
 ])
+
+@push('head')
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GuraTint" />
+    <meta property="og:title" content="Guratint | Teman Bertinta" />
+    <meta property="og:description" content="Daftar Artikel yang telah dipublish oleh Guratint dengan semua kategori" />
+    <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:image" content="{{ asset('storage/logo/header.jpg') }}">
+    <meta property="og:image:width" content="526">
+    <meta property="og:image:height" content="275">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary">
+@endpush
+
 @section('container')
     <div id="page-header" class="ph-cap-lg ph-ghost-scroll ph-image-cropped ph-content-parallax">
         <div class="page-header-inner tt-wrap">

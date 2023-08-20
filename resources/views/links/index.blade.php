@@ -14,6 +14,20 @@
     <meta name="theme-color" content="#ffffff">
     <title>GuraTint - Teman Bertinta</title>
 
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GuraTint" />
+    <meta property="og:title" content="Guratint | Teman Bertinta" />
+    <meta property="og:description"
+        content="Solusi untuk membantu anda dalam berkreasi dalam bidang digital printing, uv printing, dan persoalan tentang printing. Bergabung bersama kami menjadi teman bertinta." />
+    <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:image" content="{{ asset('storage/logo/header.jpg') }}">
+    <meta property="og:image:width" content="526">
+    <meta property="og:image:height" content="275">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -30,6 +44,18 @@
     <!-- Template master CSS -->
     <link rel="stylesheet" href="/assets/css/helper.css" />
     <link id="tt-themecss" rel="stylesheet" href="/assets/css/theme.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GuraTint" />
+    <meta property="og:title" content="Guratint | Teman Bertinta" />
+    <meta property="og:description"
+        content="Solusi untuk membantu anda dalam berkreasi dalam bidang digital printing, uv printing, dan persoalan tentang printing. Bergabung bersama kami menjadi teman bertinta." />
+    <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:image" content="{{ asset('storage/logo/header.jpg') }}">
+    <meta property="og:image:width" content="526">
+    <meta property="og:image:height" content="275">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary">
 
 </head>
 

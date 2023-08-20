@@ -62,22 +62,28 @@ class HomeController extends Controller
 
     public function about(): View
     {
+
+        $market = Market::all();
+
         $portos = Porto::query()
             ->where('published_at', '!=', null)
             ->get();
-        return view('home.about', compact('portos'));
+        return view('home.about', compact('portos', 'market'));
     }
 
     public function contact(): View
     {
-        return view('home.contact');
+        $market = Market::all();
+        return view('home.contact', compact('market'));
     }
 
     public function links(): View
     {
         $links = Clicked::all();
 
-        return view('links.index', compact('links'));
+        $market = Market::all();
+
+        return view('links.index', compact('links', 'market'));
     }
 
     public function click(string $isClikced)

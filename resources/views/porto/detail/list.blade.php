@@ -1,9 +1,22 @@
 @extends('layout.frontend.main', [
     'title' => 'Porto | ',
 ])
-@push('css')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+@push('head')
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GuraTint" />
+    <meta property="og:title" content="Portofolio {{ $kategori->nama }}" />
+    <meta property="og:description"
+        content="Portofolio pilihan Guratint dalam kategori {{ $kategori->nama }} sebagai bahan referensi Anda!" />
+    <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:image" content="{{ asset('storage/' . $kategori->thumbnail) }}">
+    <meta property="og:image:width" content="526">
+    <meta property="og:image:height" content="275">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary">
 @endpush
+
+
 @section('container')
     <div id="page-header" class="ph-full ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
         <div class="page-header-inner tt-wrap">
@@ -125,4 +138,5 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection
