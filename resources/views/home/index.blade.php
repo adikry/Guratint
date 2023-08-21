@@ -102,8 +102,9 @@
             </div>
             <div class="custom-container tt-grid ttgr-layout-3 full-width">
                 <div class="tt-grid-item" id="grow-left">
-                    <h2 class="tt-heading-title"><a href="#" class="tt-link"
-                            data-cursor="<i class='fab fa-whatsapp'></i>">Whatsapp Saja<span>↗</span></a></h2>
+                    <h2 class="tt-heading-title"><a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint"
+                            class="tt-link" data-cursor="<i class='fab fa-whatsapp'></i>">Whatsapp Saja<span>↗</span></a>
+                    </h2>
                 </div>
                 <div class="tt-grid-item">
                     <h1 id="grow-tagline-center" class="tagline text-left">&nbsp;</h1>
@@ -339,6 +340,7 @@
                                 <div class="tt-grid-item">
                                     <div class="ttgr-item-inner">
                                         <div class="portfolio-grid-item">
+
                                             <a href="/portofolio/{{ $porto->kategori->slug }}" class="pgi-image-wrap"
                                                 data-cursor="View<br>Project">
                                                 <div class="pgi-image-holder cover-opacity-2">
@@ -361,8 +363,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

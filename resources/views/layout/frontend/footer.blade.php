@@ -9,17 +9,6 @@
                 </div>
             </div>
 
-            {{-- <div class="footer-col tt-align-center order-m-last">
-                <div class="footer-col-inner">
-                    <div class="tt-copyright text-gray">
-                        <a href="https://.net" target="_blank" rel="noopener" class="tt-btn tt-btn-link">
-                            <span class="tt-btn-icon"><i class="far fa-copyright"></i></span>
-                            <div data-hover=".net">.net</div>
-                        </a>
-                    </div>
-                </div>
-            </div> --}}
-
 
             <div class="footer-col tt-align-center-right">
                 <div class="footer-col-inner">
@@ -30,24 +19,21 @@
                         <div class="social-buttons">
                             <ul>
                                 <li>
-                                    <a href="https://www.facebook.com/" class="magnetic-item" target="_blank"
-                                        rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.facebook.com/guratint?mibextid=ZbWKwL" class="magnetic-item"
+                                        target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com/" class="magnetic-item" target="_blank"
-                                        rel="noopener"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/guratint/" class="magnetic-item" target="_blank"
+                                        rel="noopener"><i class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/" class="magnetic-item" target="_blank"
-                                        rel="noopener"><i class="fab fa-youtube"></i></a>
+                                    <a href="https://www.tiktok.com/@guratint.id" class="magnetic-item" target="_blank"
+                                        rel="noopener"><i class="fab fa-tiktok"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://dribbble.com/" class="magnetic-item" target="_blank"
-                                        rel="noopener"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.behance.net/" class="magnetic-item" target="_blank"
-                                        rel="noopener"><i class="fab fa-behance"></i></a>
+                                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint"
+                                        class="magnetic-item" target="_blank" rel="noopener"><i
+                                            class="fab fa-whatsapp"></i></a>
                                 </li>
                             </ul>
                         </div>

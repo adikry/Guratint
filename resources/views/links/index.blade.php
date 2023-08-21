@@ -97,7 +97,7 @@
                                         @foreach ($links as $link)
                                             <div class="tt-grid-item isotope-item">
                                                 <div class="ttgr-item-inner custom-links ph-appear">
-                                                    <a href="{{ route('link.clicked', ['clicked' => $link->slug]) }}"
+                                                    <a href="{{ $link->link }}"
                                                         class="btn-market tt-link not-hide-cursor"
                                                         data-cursor="{{ $link->nama }}">
                                                         <div class="item-link">

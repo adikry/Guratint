@@ -15,6 +15,10 @@
     <meta name="twitter:card" content="summary">
 @endpush
 
+@push('css')
+    <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
+@endpush
+
 @section('container')
     <div id="page-header" class="ph-cap-sm ph-bg-image ph-ghost-scroll ph-image-cover-6 ph-content-parallax">
         <div class="page-header-inner tt-wrap">
@@ -65,14 +69,13 @@
 
                 <div class="social-buttons">
                     <ul>
-                        <li><a href="#" class="magnetic-item" title="Share on Whatsapp"><i
+                        <li><a id="whatsappLink" class="magnetic-item" target="_blank" title="Share on Whatsapp"><i
                                     class="fab fa-whatsapp"></i></a></li>
-                        <li><a href="#" class="magnetic-item" title="Share on Facebook"><i
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}"
+                                class="magnetic-item" target="_blank" title="Share on Facebook"><i
                                     class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="magnetic-item" title="Share on Twitter"><i
+                        <li><a id="twitterLink" class="magnetic-item" target="_blank" title="Share on Twitter"><i
                                     class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" class="magnetic-item" title="Share on Instagram"><i
-                                    class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -90,7 +93,7 @@
                     <!-- Content column -->
                     <div class="tt-col-lg-8">
 
-                        <article class="tt-blog-post lightgallery">
+                        <article class="tt-blog-post">
 
 
                             <div class="tt-blog-post-content">
@@ -103,14 +106,13 @@
                                 <div class="tt-bps-text">Share:</div>
                                 <div class="social-buttons">
                                     <ul>
-                                        <li><a href="#" class="magnetic-item" rel="noopener"
+                                        <li><a id="whatsappLink1" class="magnetic-item" rel="noopener" target="_blank"
                                                 title="Share on Whatsapp"><i class="fab fa-whatsapp"></i></a></li>
-                                        <li><a href="#" class="magnetic-item" rel="noopener"
+                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}"
+                                                class="magnetic-item" rel="noopener" target="_blank"
                                                 title="Share on Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#" class="magnetic-item" rel="noopener"
+                                        <li><a id="twitterLink1" class="magnetic-item" rel="noopener" target="_blank"
                                                 title="Share on Twitter"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" class="magnetic-item" rel="noopener"
-                                                title="Share on Instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -119,7 +121,7 @@
 
 
                         <!-- Begin blog post nav
-                                                                                                                                ======================== -->
+                                                                                                                                                                                                        ======================== -->
                         <div class="tt-blog-post-nav">
                             <div class="tt-bp-nav-col tt-bp-nav-left">
                                 <div class="tt-bp-nav-text">
@@ -169,10 +171,10 @@
             <div class="tt-section-inner tt-wrap">
 
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="/portofolio" class="tt-pn-link anim-fadeinup"
+                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint" class="tt-pn-link anim-fadeinup"
                         data-cursor="<i class='fas fa-arrow-right'></i>">
-                        <div class="tt-pn-title">Portfolio</div>
-                        <div class="tt-pn-hover-title">Portfolio</div>
+                        <div class="tt-pn-title">Hubungi Kami</div>
+                        <div class="tt-pn-hover-title">Hubungi Kami</div>
                     </a>
                     <div class="tt-pn-subtitle anim-fadeinup">Project Pilihan</div>
                 </div>
@@ -183,3 +185,16 @@
 
     </div>
 @endsection
+
+@push('js')
+    <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+    <script>
+        var whatsappMsg = "{{ $berita->judul }}" + "\r\n\r\n" + "{{ url()->full() }}";
+        var uriMsg = window.encodeURIComponent(whatsappMsg);
+
+        document.getElementById('whatsappLink').setAttribute('href', ('https://wa.me/?text=' + uriMsg));
+        document.getElementById('twitterLink').setAttribute('href', ('https://twitter.com/intent/tweet?text=' + uriMsg));
+        document.getElementById('whatsappLink1').setAttribute('href', ('https://wa.me/?text=' + uriMsg));
+        document.getElementById('twitterLink1').setAttribute('href', ('https://twitter.com/intent/tweet?text=' + uriMsg));
+    </script>
+@endpush

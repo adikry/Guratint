@@ -82,60 +82,9 @@
                             </p>
                         </div>
                     </div>
-                    <!-- /.tt-col -->
-
                     <div class="tt-col-lg-3"></div>
-                    <!-- /.tt-col -->
                 </div>
-                <!-- /.tt-row -->
             </div>
-            <!-- /.tt-section-inner -->
-        </div>
-        <!-- End tt-section -->
-
-        <div class="tt-section">
-            <div class="tt-section-inner">
-
-                <div class="tt-content-carousel cursor-drag cc-scale-down cc-hide-pagination cc-pagination-outside cc-hide-navigation"
-                    data-loop="true" data-simulate-touch="true" data-speed="900">
-                    <!-- Begin swiper container -->
-                    <div class="swiper">
-                        <!-- Begin swiper wrapper (required) -->
-                        <div class="swiper-wrapper">
-
-                            @foreach ($portos as $porto)
-                                <div class="swiper-slide">
-                                    <div class="tt-content-carousel-item">
-                                        <figure>
-                                            <img class="tt-cc-image swiper-lazy"
-                                                src="{{ asset('storage/' . $porto->thumbnail) }}"
-                                                data-src="{{ asset('storage/' . $porto->thumbnail) }}" alt="Image" />
-                                            {{-- <figcaption>{{ $porto->nama }}</figcaption> --}}
-                                        </figure>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-
-                    <div class="tt-cc-nav-prev">
-                        <div class="tt-cc-nav-arrow magnetic-item">
-                            <i class="tt-arrow-left"></i>
-                        </div>
-                    </div>
-                    <div class="tt-cc-nav-next">
-                        <div class="tt-cc-nav-arrow magnetic-item">
-                            <i class="tt-arrow-right"></i>
-                        </div>
-                    </div>
-
-                    <!-- Content carousel pagination -->
-                    <div class="tt-cc-pagination hide-cursor"></div>
-                </div>
-                <!-- End content carousel -->
-            </div>
-            <!-- /.tt-section-inner -->
         </div>
 
 
@@ -145,40 +94,28 @@
                     <div class="tt-col-lg-7">
 
                         <div class="tt-heading tt-heading-xlg anim-fadeinup">
-                            <h3 class="tt-heading-subtitle">Teman Bertinta</h3>
-                            <h2 class="tt-heading-title">Kelebihan Kami</h2>
+                            <h3 class="tt-heading-subtitle">Kenapa Guratint</h3>
+                            <h2 class="tt-heading-title">Sahabat Tinta</h2>
                             <!-- You can use <br> to break a text line if needed -->
                         </div>
-                        <!-- End tt-Heading -->
                     </div>
-                    <!-- /.tt-col -->
 
                     <div class="tt-col-lg-5 tt-align-self-center">
 
                         <div class="anim-fadeinup">
                             <h5>
-                                When passion, courage, and craftsmanship are put into
-                                something, positive things will happen.
+                                Jangan sungkan untuk berdiskusi dengan kami untuk segala kebutuhan Anda.
                             </h5>
                         </div>
-
-                        <div class="text-gray anim-fadeinup">
-                            <p>
-                                Their could can widen ten she any. As so we smart those
-                                money in. Am wrote up whole so tears sense oh. Absolute
-                                required of reserved in offering no.
-                            </p>
-                        </div>
                     </div>
-                    <!-- /.tt-col -->
+
                 </div>
-                <!-- /.tt-row -->
 
                 <div class="tt-accordion tt-ac-borders">
                     <div class="tt-accordion-item anim-fadeinup">
                         <div class="tt-accordion-heading">
                             <div class="tt-ac-head cursor-alter">
-                                <h3 class="tt-ac-head-title">Order Satu-an</h3>
+                                <h3 class="tt-ac-head-title">Tanpa Minimal Order</h3>
                             </div>
 
                             <div class="tt-accordion-caret-wrap">
@@ -186,25 +123,24 @@
                                     <div class="tt-accordion-caret"></div>
                                 </div>
                             </div>
-                            <!-- /.tt-accordion-caret-wrap -->
+
                         </div>
-                        <!-- /.tt-accordion-heading -->
+
                         <div class="tt-accordion-content is-open max-width-800">
                             <p>
-                                Advantage old had otherwise sincerity dependent
-                                additions. It in adapted natural hastily is justice.
-                                Six draw you him <a href="">newspaper assurance</a>.
+                                Hantu terseram bagi customer printing adalah "MINIMAL ORDER" !! Berbeda dengan kami,
+                                GURATINT menyediakan layanan TANPA MINIMAL ORDER, order satuan kami akan kerjakan
+                                dengan memberikan kualitas terbaik. Tentu dengan penyesuain harga yang berteman
+                                dengan harga produksi.
                             </p>
                         </div>
-                        <!-- /.tt-accordion-content -->
+
                     </div>
-                    <!-- /.tt-accordion-item -->
 
                     <div class="tt-accordion-item anim-fadeinup">
                         <div class="tt-accordion-heading">
                             <div class="tt-ac-head cursor-alter">
-                                <h3 class="tt-ac-head-title">Layanan Cepat</h3>
-                                <!-- <div class="tt-accordion-subtext">Vivamus nisi</div> -->
+                                <h3 class="tt-ac-head-title">Kualitas Terbaik</h3>
                             </div>
 
                             <div class="tt-accordion-caret-wrap">
@@ -212,30 +148,22 @@
                                     <div class="tt-accordion-caret"></div>
                                 </div>
                             </div>
-                            <!-- /.tt-accordion-caret-wrap -->
                         </div>
-                        <!-- /.tt-accordion-heading -->
                         <div class="tt-accordion-content max-width-800">
                             <p>
-                                Allow miles wound place the leave had. To sitting
-                                subject no improve studied limited. Ye indulgence
-                                unreserved connection alteration appearance my an
-                                astonished. Up as seen sent make he they of. Her
-                                raising and himself pasture believe females. Fancy
-                                she stuff after aware merit small his.
+                                Didukung dengan teknologi terkini seperti Print UV, DTF, DTG, Offsett hingga digital
+                                printing lainnya. Kami akan memberikan kualitas terbaik sesuai dengan kebutuhan
+                                anda.
                             </p>
                         </div>
-                        <!-- /.tt-accordion-content -->
                     </div>
-                    <!-- /.tt-accordion-item -->
 
                     <div class="tt-accordion-item anim-fadeinup">
                         <div class="tt-accordion-heading">
                             <div class="tt-ac-head cursor-alter">
                                 <h3 class="tt-ac-head-title">
-                                    Kualitas
+                                    Konsultasi Gratis
                                 </h3>
-                                <!-- <div class="tt-accordion-subtext">Nam min proin eget</div> -->
                             </div>
 
                             <div class="tt-accordion-caret-wrap">
@@ -243,28 +171,22 @@
                                     <div class="tt-accordion-caret"></div>
                                 </div>
                             </div>
-                            <!-- /.tt-accordion-caret-wrap -->
                         </div>
-                        <!-- /.tt-accordion-heading -->
+
                         <div class="tt-accordion-content max-width-800">
                             <p>
-                                Rank tall boy man them over post now. Off into she
-                                bed long fat room. Recommend existence curiosity
-                                perfectly favourite get eat she why daughters. Not
-                                may too nay busy last song must sell. An newspaper
-                                assurance discourse ye certainly. Soon gone game and
-                                why many calm have.
+                                Dengan trend yang berubah begitu cepat, anda tentu saja membutuhkan TEMAN diskusi
+                                tentang eksekusi ide cemerlang anda. Jangan sungkan untuk konsultasi atau diskusi
+                                untuk saling mendukung satu sama lain demi melahirkan sebuah produk atau karya yang
+                                terbaik.
                             </p>
                         </div>
-                        <!-- /.tt-accordion-content -->
                     </div>
-                    <!-- /.tt-accordion-item -->
 
                     <div class="tt-accordion-item anim-fadeinup">
                         <div class="tt-accordion-heading">
                             <div class="tt-ac-head cursor-alter">
-                                <h3 class="tt-ac-head-title">Konsultasi Gratis</h3>
-                                <!-- <div class="tt-accordion-subtext">Condimentum sit amet</div> -->
+                                <h3 class="tt-ac-head-title">Proses Cepat</h3>
                             </div>
 
                             <div class="tt-accordion-caret-wrap">
@@ -272,26 +194,20 @@
                                     <div class="tt-accordion-caret"></div>
                                 </div>
                             </div>
-                            <!-- /.tt-accordion-caret-wrap -->
                         </div>
-                        <!-- /.tt-accordion-heading -->
+
                         <div class="tt-accordion-content max-width-800">
                             <p>
-                                To sure calm much most long me mean. Able rent long
-                                in do we. Uncommonly no it announcing melancholy an
-                                in. Mirth learn it he given. Secure shy favour
-                                length all twenty denote. He felicity no an at
-                                packages answered opinions juvenile.
+                                Pesanan anda akan menjadi prioritas kami, dengan Same Day Process kami berharap bisa
+                                membantu anda dalam project yang membutuhkan waktu cepat. Sangkuriang dengan
+                                Tangkuban Perahu nya yang gagal meminang Dayang Sumbi, namun kami akan buktikan
+                                cinta kami untuk anda dalam bentuk Same Day Process.
                             </p>
                         </div>
                     </div>
-                    <!-- /.tt-accordion-item -->
                 </div>
-                <!-- End accordion -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
 
         <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-100 bg-white-accent-3">
@@ -305,45 +221,58 @@
                                 Dikatakan Oleh<br />
                                 Teman Bertinta
                             </h2>
-                            <!-- You can use <br> to break a text line if needed -->
                         </div>
-                        <!-- End tt-Heading -->
                     </div>
-                    <!-- /.tt-col -->
 
                     <div class="tt-col-lg-7 tt-align-self-center">
 
                         <div class="tt-testimonials-slider cursor-drag ts-scale-down ts-hide-navigation anim-fadeinup"
                             data-loop="true" data-simulate-touch="true" data-speed="900">
-                            <!-- Begin swiper container -->
                             <div class="swiper">
-                                <!-- Begin swiper wrapper (required) -->
                                 <div class="swiper-wrapper">
 
                                     <div class="swiper-slide">
-                                        <!-- Begin testimonials slider item -->
                                         <div class="tt-testimonials-slider-item">
                                             <div class="tt-ts-item-inner">
                                                 <div class="tt-ts-text">
-                                                    "One of the best template I've ever had. I
-                                                    love it! It's fully customizable, well coded,
-                                                    fast and responsive - fitting for all kind of
-                                                    devices."
+                                                    "Kualitas UV printing mereka luar biasa. Warna dan detailnya membuat
+                                                    produk terlihat sangat profesional. Layanan pelanggan yang responsif
+                                                    juga membuat pengalaman menyenangkan."
                                                 </div>
 
-                                                <div class="tt-ts-subtext">- Wironimo</div>
+                                                <div class="tt-ts-subtext">- AganGege</div>
                                             </div>
                                         </div>
-                                        <!-- End testimonials slider item -->
                                     </div>
-                                    <!-- End swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="tt-testimonials-slider-item">
+                                            <div class="tt-ts-item-inner">
+                                                <div class="tt-ts-text">
+                                                    "Pilihan terbaik untuk digital printing. Hasilnya selalu melebihi
+                                                    harapan kami. Teknologi UV printing mereka tahan lama. Tim yang terampil
+                                                    dan kreatif."
+                                                </div>
+
+                                                <div class="tt-ts-subtext">- Edward</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="tt-testimonials-slider-item">
+                                            <div class="tt-ts-item-inner">
+                                                <div class="tt-ts-text">
+                                                    "Pengalaman luar biasa dengan digital printing UV ini. Cepat, andal, dan
+                                                    produk akhirnya mengesankan. Terima kasih kepada tim yang berdedikasi."
+                                                </div>
+
+                                                <div class="tt-ts-subtext">- Dikry</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
-                                <!-- End swiper wrapper -->
                             </div>
-                            <!-- End swiper container -->
 
-                            <!-- Begin testimonials slider navigation (arrows) -->
                             <div class="tt-ts-nav-prev">
                                 <div class="tt-ts-nav-arrow magnetic-item">
                                     <i class="tt-arrow-left"></i>
@@ -354,121 +283,51 @@
                                     <i class="tt-arrow-right"></i>
                                 </div>
                             </div>
-                            <!-- End testimonials slider navigation -->
 
-                            <!-- Testimonials slider pagination -->
                             <div class="tt-ts-pagination hide-cursor"></div>
                         </div>
-                        <!-- End testimonials slider -->
                     </div>
-                    <!-- /.tt-col -->
                 </div>
-                <!-- /.tt-row -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
-        <!-- End tt-section -->
 
 
         <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
             <div class="tt-section-inner ">
 
                 <div class="tt-heading tt-heading-lg tt-heading-center margin-bottom-60 anim-fadeinup">
-                    <!-- <h3 class="tt-heading-subtitle text-main">Subtitle</h3> -->
+
                     <h2 class="tt-heading-title">
                         Teman bertinta<br />
                         kami
                     </h2>
-                    <!-- You can use <br> to break a text line if needed -->
+
                 </div>
-                <!-- End tt-Heading -->
 
                 <div class="tt-content-carousel is-client cursor-drag cc-scale-down cc-pagination-outside cc-hide-navigation"
                     data-loop="true" data-simulate-touch="true" data-speed="900" data-pagination-type="progressbar">
-                    <!-- Begin swiper container -->
+
                     <div class="swiper">
-                        <!-- Begin swiper wrapper (required) -->
                         <div class="swiper-wrapper">
-                            <!-- Begin swiper slide -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,1"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,1"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
 
-                            <!-- Begin swiper slide -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,2"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,2"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
+                            @if ($clients)
+                                @foreach ($clients as $client)
+                                    <div class="swiper-slide">
+                                        <div class="tt-content-carousel-item">
+                                            <figure>
+                                                <img class="tt-cc-image-client swiper-lazy"
+                                                    src="{{ asset('storage/' . $client->logo) }}"
+                                                    data-src="{{ asset('storage/' . $client->logo) }}" alt="Image" />
 
-                            <!-- Begin swiper slide -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,3"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,3"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
+                                            </figure>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
 
-                            <!-- Begin swiper slide -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,4"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,4"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
-
-                            <!-- Begin swiper slide -->
-                            <div class="swiper-slide">
-                                <div class="tt-content-carousel-item">
-                                    <figure>
-                                        <img class="tt-cc-image-client swiper-lazy"
-                                            src="https://source.unsplash.com/random/200x200/?logo,dark,5"
-                                            data-src="https://source.unsplash.com/random/200x200/?logo,dark,5"
-                                            alt="Image" />
-                                        <!-- <figcaption>Image Caption</figcaption> -->
-                                    </figure>
-                                </div>
-                                <!-- /.tt-content-carousel-item -->
-                            </div>
-                            <!-- End swiper slide -->
                         </div>
-                        <!-- End swiper wrapper -->
                     </div>
-                    <!-- End swiper container -->
 
-                    <!-- Begin content carousel navigation (arrows) -->
                     <div class="tt-cc-nav-prev">
                         <div class="tt-cc-nav-arrow magnetic-item">
                             <i class="tt-arrow-left"></i>
@@ -479,22 +338,18 @@
                             <i class="tt-arrow-right"></i>
                         </div>
                     </div>
-                    <!-- End content carousel navigation -->
 
-                    <!-- Content carousel pagination -->
                     <div class="tt-cc-pagination hide-cursor"></div>
                 </div>
-                <!-- End logo wall -->
             </div>
-            <!-- /.tt-section-inner -->
         </div>
 
         <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
             <div class="tt-section-inner tt-wrap">
 
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="contact.html" class="tt-pn-link anim-fadeinup"
-                        data-cursor="<i class='fas fa-envelope'></i>">
+                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint" class="tt-pn-link anim-fadeinup"
+                        data-cursor="<i class='fab fa-whatsapp'></i>">
                         <div class="tt-pn-title">Mari Bertinta</div>
                         <div class="tt-pn-hover-title">Mari Bertinta</div>
                     </a>

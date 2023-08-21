@@ -107,7 +107,7 @@
             <div class="tt-section-inner tt-wrap">
 
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="https://api.whatsapp.com/send?phone=089623333085" class="tt-pn-link anim-fadeinup"
+                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint" class="tt-pn-link anim-fadeinup"
                         data-cursor="<i class='fab fa-whatsapp'></i>">
                         <div class="tt-pn-title">Hubungi Kami</div>
                         <div class="tt-pn-hover-title">Hubungi Kami</div>

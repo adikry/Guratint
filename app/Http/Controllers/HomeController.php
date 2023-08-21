@@ -68,7 +68,9 @@ class HomeController extends Controller
         $portos = Porto::query()
             ->where('published_at', '!=', null)
             ->get();
-        return view('home.about', compact('portos', 'market'));
+
+        $clients = Client::all();
+        return view('home.about', compact('portos', 'market', 'clients'));
     }
 
     public function contact(): View

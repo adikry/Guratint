@@ -28,13 +28,18 @@
     @stack('head')
 
     {{-- Google Tag Manager --}}
-    @if ($market)
+    {{-- @if ($market)
         @foreach ($market as $item)
             @if ($item->applicationName === 'googleTag')
                 {!! $item->head !!}
             @endif
+
+            @if ($item->applicationName === 'meta2')
+                {!! $item->head !!}
+            @endif
         @endforeach
-    @endif
+    @endif --}}
+
 
 
     <!-- Google Analytics -->
