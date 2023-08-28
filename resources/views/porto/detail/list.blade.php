@@ -118,28 +118,29 @@
             </div>
         </div>
 
+        @if ($next)
+            <div class="tt-section no-padding">
+                <div class="tt-section-inner">
+                    <div class="tt-next-project np-image-cover-3">
 
-        <div class="tt-section no-padding">
-            <div class="tt-section-inner">
-                <div class="tt-next-project np-image-cover-3">
+                        <div class="tt-np-image">
+                            <img src="{{ asset('storage/' . $next->thumbnail) }}" alt="{{ $next->nama }}" />
+                        </div>
 
-                    <div class="tt-np-image">
-                        <img src="{{ asset('storage/' . $next->thumbnail) }}" alt="{{ $next->nama }}" />
+                        <div class="tt-np-caption">
+                            <div class="tt-np-subtitle">Portofolio Selanjutnya</div>
+                            <h2 class="tt-np-title">
+                                <a href="/portofolio/{{ $next->slug }}" data-cursor="Next<br>Porto">
+                                    {{ $next->nama }}
+                                </a>
+                            </h2>
+                        </div>
+
+                        <div class="tt-np-ghost">Selanjutnya</div>
                     </div>
-
-                    <div class="tt-np-caption">
-                        <div class="tt-np-subtitle">Portofolio Selanjutnya</div>
-                        <h2 class="tt-np-title">
-                            <a href="/portofolio/{{ $next->slug }}" data-cursor="Next<br>Porto">
-                                {{ $next->nama }}
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="tt-np-ghost">Selanjutnya</div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection
 

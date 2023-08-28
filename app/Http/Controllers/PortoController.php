@@ -27,10 +27,12 @@ class PortoController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
+        $listKategori = Kategori::count();
+
 
         $market = Market::all();
 
-        if ($kategori->id === 8) {
+        if ($kategori->id === $listKategori) {
             $kategori->id = 1;
         } else {
             $kategori->id += +1;
