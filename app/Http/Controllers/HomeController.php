@@ -7,6 +7,7 @@ use App\Models\Clicked;
 use App\Models\Client;
 use App\Models\Kategori;
 use App\Models\Kontak;
+use App\Models\LandingPage;
 use App\Models\Market;
 use App\Models\Porto;
 use Illuminate\Http\Request;
@@ -68,7 +69,9 @@ class HomeController extends Controller
         $portos = Porto::query()
             ->where('published_at', '!=', null)
             ->get();
-        return view('home.about', compact('portos', 'market'));
+
+        $clients = Client::all();
+        return view('home.about', compact('portos', 'market', 'clients'));
     }
 
     public function contact(): View
@@ -93,5 +96,17 @@ class HomeController extends Controller
             ->get();
 
         // ddd($clicked);
+    }
+
+    public function landing(): View
+    {
+        $data = LandingPage::query()
+            ->where('isActive', '=', 1)
+            ->limit(1)
+            ->first();
+
+        $market = Market::all();
+
+        return view('landing_page.index', compact('data', 'market'));
     }
 }

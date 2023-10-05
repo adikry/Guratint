@@ -81,7 +81,8 @@
                                         <div class="bli-categories">
                                             <a href="/blog/{{ $blog->kategori->slug }}">{{ $blog->kategori->nama }}</a>
                                         </div>
-                                        <h2 class="bli-title"><a href="/blog/{{ $blog->slug }}">
+                                        <h2 class="bli-title"><a
+                                                href="/blog/{{ $blog->kategori->slug }}/{{ $blog->slug }}">
                                                 {{ $blog->judul }}
                                             </a></h2>
                                         <div class="bli-meta">
@@ -124,9 +125,10 @@
             <div class="tt-section-inner tt-wrap">
 
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="/portofolio" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-arrow-right'></i>">
-                        <div class="tt-pn-title">Portfolio</div>
-                        <div class="tt-pn-hover-title">Portfolio</div>
+                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint" class="tt-pn-link anim-fadeinup"
+                        data-cursor="<i class='fas fa-arrow-right'></i>">
+                        <div class="tt-pn-title">Hubungi Kami</div>
+                        <div class="tt-pn-hover-title">Hubungi Kami</div>
                     </a> <!-- /.tt-pn-link -->
                     <div class="tt-pn-subtitle anim-fadeinup">Selected Works</div>
                 </div>

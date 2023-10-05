@@ -2712,6 +2712,20 @@
             });
         }
 
+        if ($(".float-button").length) {
+            gsap.to(".float-button", {
+                autoAlpha: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#page-content",
+                    start: "top top",
+                    end: "top top",
+                    scrub: true,
+                    markers: true,
+                },
+            });
+        }
+
         // Page header projekt share
         if ($(".ph-share").length) {
             gsap.to(".ph-share-inner", {

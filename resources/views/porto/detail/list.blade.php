@@ -16,6 +16,9 @@
     <meta name="twitter:card" content="summary">
 @endpush
 
+@push('css')
+    <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
+@endpush
 
 @section('container')
     <div id="page-header" class="ph-full ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
@@ -57,11 +60,11 @@
             <div class="tt-section-inner">
                 <div id="portfolio-grid" class="pgi-hover pgi-cap-center pgi-cap-hover">
                     <div class="tt-grid ttgr-layout-3 ttgr-gap-3">
-                        <div class="tt-grid-items-wrap isotope-items-wrap lightgallery">
+                        <div class="tt-grid-items-wrap lightgallery">
 
                             @if (count($portos))
                                 @foreach ($portos as $porto)
-                                    <div class="tt-grid-item isotope-item">
+                                    <div class="tt-grid-item">
                                         <div class="ttgr-item-inner">
                                             <div class="portfolio-grid-item">
                                                 <a href="{{ asset('storage/' . $porto->thumbnail) }}"
@@ -80,8 +83,7 @@
                                                 <div class="pgi-caption">
                                                     <div class="pgi-caption-inner">
                                                         <h2 class="pgi-title">
-                                                            <a
-                                                                href="/portofolio/{{ $porto->kategori->slug }}/{{ $porto->slug }}">{{ $porto->nama }}</a>
+                                                            <a href="#">{{ $porto->nama }}</a>
                                                         </h2>
                                                     </div>
                                                 </div>
@@ -105,7 +107,7 @@
             <div class="tt-section-inner tt-wrap">
 
                 <div class="tt-page-nav tt-pn-stroke">
-                    <a href="https://api.whatsapp.com/send?phone=089623333085" class="tt-pn-link anim-fadeinup"
+                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint" class="tt-pn-link anim-fadeinup"
                         data-cursor="<i class='fab fa-whatsapp'></i>">
                         <div class="tt-pn-title">Hubungi Kami</div>
                         <div class="tt-pn-hover-title">Hubungi Kami</div>
@@ -116,27 +118,32 @@
             </div>
         </div>
 
+        @if ($next)
+            <div class="tt-section no-padding">
+                <div class="tt-section-inner">
+                    <div class="tt-next-project np-image-cover-3">
 
-        <div class="tt-section no-padding">
-            <div class="tt-section-inner">
-                <div class="tt-next-project np-image-cover-3">
+                        <div class="tt-np-image">
+                            <img src="{{ asset('storage/' . $next->thumbnail) }}" alt="{{ $next->nama }}" />
+                        </div>
 
-                    <div class="tt-np-image">
-                        <img src="{{ asset('storage/' . $next->thumbnail) }}" alt="{{ $next->nama }}" />
+                        <div class="tt-np-caption">
+                            <div class="tt-np-subtitle">Portofolio Selanjutnya</div>
+                            <h2 class="tt-np-title">
+                                <a href="/portofolio/{{ $next->slug }}" data-cursor="Next<br>Porto">
+                                    {{ $next->nama }}
+                                </a>
+                            </h2>
+                        </div>
+
+                        <div class="tt-np-ghost">Selanjutnya</div>
                     </div>
-
-                    <div class="tt-np-caption">
-                        <div class="tt-np-subtitle">Portofolio Selanjutnya</div>
-                        <h2 class="tt-np-title">
-                            <a href="/portofolio/{{ $next->slug }}" data-cursor="Next<br>Porto">
-                                {{ $next->nama }}
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="tt-np-ghost">Selanjutnya</div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection
+
+@push('js')
+    <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+@endpush

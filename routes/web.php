@@ -1,10 +1,11 @@
 <?php
 
-use App\Filament\Resources\KontakResource;
+use Spatie\Sitemap\SitemapGenerator;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortoController;
-use Illuminate\Support\Facades\Route;
+use App\Filament\Resources\KontakResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,13 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/links', 'links')->name('links');
     Route::get('/jump-to/{clicked:slug}', 'click')->name('link.clicked');
+    Route::get('landing-page', 'landing');
+});
+
+Route::get('/sitemap', function () {
+    SitemapGenerator::create('http://127.0.0.1:8000/')->writeToFile('public/sitemap.xml');
+
+    return 'sudah dibuatkan';
 });
 
 Route::controller(PortoController::class)->group(function () {

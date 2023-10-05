@@ -22,7 +22,9 @@ class ClickedResource extends Resource
 {
     protected static ?string $model = Clicked::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Links Market';
+
+    protected static ?string $navigationIcon = 'heroicon-o-share';
 
     protected static ?string $navigationGroup = 'Kontak';
 

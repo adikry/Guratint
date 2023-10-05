@@ -28,13 +28,18 @@
     @stack('head')
 
     {{-- Google Tag Manager --}}
-    @if ($market)
+    {{-- @if ($market)
         @foreach ($market as $item)
             @if ($item->applicationName === 'googleTag')
                 {!! $item->head !!}
             @endif
+
+            @if ($item->applicationName === 'meta2')
+                {!! $item->head !!}
+            @endif
         @endforeach
-    @endif
+    @endif --}}
+
 
 
     <!-- Google Analytics -->
@@ -58,8 +63,8 @@
     <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
     <link rel="stylesheet" href="/assets/vendor/swiper/css/swiper-bundle.min.css" />
     <!-- Swiper CSS (https://swiperjs.com/) -->
-    <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
-    <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+    {{-- <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
+    <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) --> --}}
     @stack('css')
 
     <!-- Template master CSS -->
@@ -109,6 +114,11 @@
 
         </div>
 
+        <a class="float-button" target="_blank" href="https://wa.me/6285174173451/?text=Hallo%20Admin%20GuraTint">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>Whatsapp<span>
+        </a>
+
     </main>
 
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
@@ -117,10 +127,10 @@
     <script src="/assets/vendor/gsap/ScrollTrigger.min.js"></script>
     <script src="/assets/vendor/smooth-scrollbar.js"></script>
     <script src="/assets/vendor/swiper/js/swiper-bundle.min.js"></script>
-    <script src="/assets/vendor/isotope/imagesloaded.pkgd.min.js"></script>
+    {{-- <script src="/assets/vendor/isotope/imagesloaded.pkgd.min.js"></script>
     <script src="/assets/vendor/isotope/isotope.pkgd.min.js"></script>
-    <script src="/assets/vendor/isotope/packery-mode.pkgd.min.js"></script>
-    <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+    <script src="/assets/vendor/isotope/packery-mode.pkgd.min.js"></script> --}}
+    {{-- <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> --}}
     <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
 
     @stack('js')

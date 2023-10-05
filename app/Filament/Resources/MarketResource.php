@@ -20,7 +20,9 @@ class MarketResource extends Resource
 {
     protected static ?string $model = Market::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Ads Market';
+
+    protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
     protected static ?string $navigationGroup = 'Konten';
 

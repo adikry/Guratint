@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -20,7 +21,9 @@ class ClientResource extends Resource
 {
     protected static ?string $model = Client::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'List Client';
+
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $navigationGroup = 'Kontak';
 
@@ -67,7 +70,14 @@ class ClientResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->before(function (Model $record, array $data) {
+                        if ($record->logo != $data['logo']) {
+                            if ($record->logo != null) {
+                                Storage::delete($record->logo);
+                            }
+                        }
+                    }),
                 Tables\Actions\DeleteAction::make()
                     ->before(function ($record) {
                         if ($record->logo) {
@@ -87,7 +97,7 @@ class ClientResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-            ]);
+            ])->defaultSort('id', 'desc');
     }
 
     public static function getPages(): array

@@ -34,7 +34,7 @@ class BlogController extends Controller
             ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
             ->where('isActive', '=', 1)
             ->where('published_at', '!=', null)
-            ->groupBy('kategori.id')
+            ->groupBy(['kategori.nama', 'kategori.slug'])
             ->orderBy('kategori.id')
             ->get();
         $kategori = null;
@@ -60,7 +60,7 @@ class BlogController extends Controller
             ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
             ->where('published_at', '!=', null)
             ->where('isActive', '=', 1)
-            ->groupBy('kategori.id')
+            ->groupBy(['kategori.nama', 'kategori.slug'])
             ->orderBy('kategori.id')
             ->get();
 
@@ -99,7 +99,7 @@ class BlogController extends Controller
             ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
             ->where('published_at', '!=', null)
             ->where('isActive', '=', 1)
-            ->groupBy('kategori.id')
+            ->groupBy(['kategori.nama', 'kategori.slug'])
             ->orderBy('kategori.id')
             ->get();
 

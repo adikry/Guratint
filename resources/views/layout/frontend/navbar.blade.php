@@ -65,30 +65,26 @@
                                     </h6>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank" rel="noopener">Facebook</a>
+                                    <a href="https://www.facebook.com/guratint?mibextid=ZbWKwL" target="_blank"
+                                        rel="noopener">Facebook</a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank" rel="noopener">Instagram</a>
+                                    <a href="https://www.instagram.com/guratint/" target="_blank"
+                                        rel="noopener">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank" rel="noopener">Tiktok</a>
+                                    <a href="https://www.tiktok.com/@guratint.id" target="_blank"
+                                        rel="noopener">Tiktok</a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank" rel="noopener">Youtube</a>
+                                    <a href="https://wa.me/+6285174173451?text=Hallo%20Admin%20GuraTint" target="_blank"
+                                        rel="noopener">Whatsapp</a>
                                 </li>
                             </ul>
-                            <!-- End overlay menu social links -->
                         </div>
-                        <!-- /.tt-ol-menu-content -->
                     </div>
-                    <!-- /.tt-ol-menu-inner -->
                 </div>
-                <!-- /.tt-ol-menu-holder -->
             </nav>
-            <!-- End overlay menu -->
         </div>
-        <!-- /.header-col -->
     </div>
-    <!-- /.header-inner -->
 </header>
-<!-- End header -->

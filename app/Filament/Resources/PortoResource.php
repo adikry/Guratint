@@ -16,6 +16,7 @@ use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -29,7 +30,9 @@ class PortoResource extends Resource
 {
     protected static ?string $model = Porto::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Portofolio';
+
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
 
     protected static ?string $navigationGroup = "Konten";
 
@@ -55,16 +58,12 @@ class PortoResource extends Resource
                                     }),
                                 Forms\Components\TextInput::make('slug')
                                     ->required()
+                                    ->unique(ignoreRecord: true)
                                     ->maxLength(255),
                                 Forms\Components\FileUpload::make('thumbnail')
                                     ->image()
                                     ->maxSize(2048)
                                     ->directory('porto-head')
-                                    ->preserveFilenames()
-                                    ->getUploadedFileNameForStorageUsing(
-                                        fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                                            ->prepend(now()->timestamp . "_"),
-                                    )
                                     ->required(),
                                 Forms\Components\Select::make('kategori_id')
                                     ->relationship('kategori', 'nama')
@@ -76,6 +75,7 @@ class PortoResource extends Resource
                                         Forms\Components\DateTimePicker::make('published_at')
                                             ->placeholder('Tanggal Publikasi')
                                             ->firstDayOfWeek(7)
+                                            ->default(now())
                                             ->displayFormat('d/M/Y'),
                                         Group::make()
                                             ->schema([
@@ -116,6 +116,10 @@ class PortoResource extends Resource
                 Tables\Columns\TextColumn::make('kategori.nama')
                     ->sortable()
                     ->searchable(),
+                ToggleColumn::make('isActive')
+                    ->sortable(),
+                ToggleColumn::make('forHomepage')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('published_at')
                     ->since()
                     ->sortable(),
@@ -151,8 +155,14 @@ class PortoResource extends Resource
                     Tables\Actions\DeleteBulkAction::make()
                         ->before(function (Collection $records) {
                             foreach ($records as $konten) {
-                                Storage::delete($konten->content);
-                                Storage::delete($konten->thumbnail);
+
+                                if ($konten->content) {
+                                    Storage::delete($konten->content);
+                                }
+
+                                if ($konten->thumbnail) {
+                                    Storage::delete($konten->thumbnail);
+                                }
                             }
                         })
                 ]),
