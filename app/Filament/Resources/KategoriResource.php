@@ -90,7 +90,7 @@ class KategoriResource extends Resource
                     Tables\Actions\DeleteBulkAction::make()
                         ->before(function (Collection $records) {
                             foreach ($records as $item) {
-                                Storage::delete($item);
+                                Storage::delete($item->thumbnail);
                             }
                         }),
                 ]),

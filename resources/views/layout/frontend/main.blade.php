@@ -114,6 +114,11 @@
 
         </div>
 
+        <a class="float-button" target="_blank" href="https://wa.me/6285174173451/?text=Hallo%20Admin%20GuraTint">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>Whatsapp<span>
+        </a>
+
     </main>
 
     <script src="/assets/vendor/jquery/jquery.min.js"></script>

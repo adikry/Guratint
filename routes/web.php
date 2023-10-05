@@ -25,6 +25,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/links', 'links')->name('links');
     Route::get('/jump-to/{clicked:slug}', 'click')->name('link.clicked');
+    Route::get('landing-page', 'landing');
 });
 
 Route::get('/sitemap', function () {
