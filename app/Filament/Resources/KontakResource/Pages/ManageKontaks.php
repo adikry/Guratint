@@ -5,6 +5,8 @@ namespace App\Filament\Resources\KontakResource\Pages;
 use App\Filament\Resources\KontakResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ManageRecords;
+use pxlrbt\FilamentExcel\Actions\Pages\ExportAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class ManageKontaks extends ManageRecords
 {
@@ -14,6 +16,11 @@ class ManageKontaks extends ManageRecords
     {
         return [
             // Actions\CreateAction::make(),
+            ExportAction::make()->exports([
+                ExcelExport::make()->fromTable()->only([
+                    'nama', 'phone', 'email'
+                ])
+            ])
         ];
     }
 }

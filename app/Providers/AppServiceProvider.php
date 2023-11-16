@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Kategori;
+use App\Models\Market;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +23,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
+        $market = Market::all();
+        View::share('market', $market);
+
+        $kategori = Kategori::all();
+        View::share('kategori', $kategori);
+
         Paginator::defaultView('pagination::custom-pagination');
     }
 }

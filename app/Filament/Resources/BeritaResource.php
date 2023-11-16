@@ -79,7 +79,9 @@ class BeritaResource extends Resource
                                         Forms\Components\FileUpload::make('thumbnail')
                                             ->required()
                                             ->image()
-                                            ->maxSize(2048)
+                                            ->resize(40)
+                                            ->optimize('webp')
+                                            ->maxSize(1024)
                                             ->directory('blog-head'),
                                         Forms\Components\DateTimePicker::make('published_at')
                                             ->placeholder('Tanggal Publikasi')

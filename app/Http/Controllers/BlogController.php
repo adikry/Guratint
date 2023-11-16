@@ -17,8 +17,6 @@ class BlogController extends Controller
     public function index(Request $request): View
     {
 
-        $market = Market::all();
-
         $beritas = Berita::query()
             ->filter(request(['q']))
             ->where('isActive', '=', 1)
@@ -26,8 +24,6 @@ class BlogController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(5)
             ->withQueryString();
-
-        // Artikel::latest()->filter(request(['keyword', 'rubrik']))->whereNotNull('published_at')->paginate(9)->withQueryString(),
 
         $kategories = Kategori::query()
             ->join('berita', 'kategori_id', '=', 'kategori.id')
@@ -37,9 +33,9 @@ class BlogController extends Controller
             ->groupBy(['kategori.nama', 'kategori.slug'])
             ->orderBy('kategori.id')
             ->get();
-        $kategori = null;
+        $pilih = null;
 
-        return view('blog.index', compact('beritas', 'kategories', 'kategori', 'market'));
+        return view('blog.index', compact('beritas', 'kategories', 'pilih'));
     }
 
     public function blogList(string $kategori, Request $request): View
@@ -63,10 +59,11 @@ class BlogController extends Controller
             ->groupBy(['kategori.nama', 'kategori.slug'])
             ->orderBy('kategori.id')
             ->get();
+        $pilih = $kategori;
 
         $market = Market::all();
 
-        return view('blog.index', compact('beritas', 'kategories', 'kategori', 'market'));
+        return view('blog.index', compact('beritas', 'kategories', 'pilih', 'market'));
     }
 
     public function blogDetail(string $kategori, Berita $berita): View
@@ -82,7 +79,6 @@ class BlogController extends Controller
             ->orderBy('published_at', 'desc')
             ->limit(1)
             ->first();
-
 
         $prev = Berita::query()
             ->where('isActive', '=', 1)
@@ -103,6 +99,8 @@ class BlogController extends Controller
             ->orderBy('kategori.id')
             ->get();
 
-        return view('blog.detail', compact('kategori', 'berita', 'next', 'prev', 'market', 'kategories'));
+        $pilih = $kategori;
+
+        return view('blog.detail', compact('pilih', 'berita', 'next', 'prev', 'market', 'kategories'));
     }
 }
