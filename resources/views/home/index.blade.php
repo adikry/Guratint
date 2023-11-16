@@ -17,22 +17,32 @@
 @endpush
 
 @push('css')
-    <link rel="stylesheet" href="/assets/vendor/sweetalert2/sweetalert2.css">
+    <link rel="stylesheet" href="/assets/vendor/sweetalert2/sweetalert2.min.css">
 @endpush
 
 @section('container')
     <!-- Begin page header -->
+    <h1 style="display: none">Selamat Datang di Layanan Cetak UV Printing Berkualitas Tinggi: Mengungkap Keindahan Desain
+        Anda dengan Teknologi Canggih</h1>
+    <h1 style="display:none">Guratint hadir untuk menawarkan solusi dalam berkreasi di bidang digital printing, uv printing,
+        dan persoalan tentang printing. Bergabung bersama kami menjadi teman bertinta dalam digital printing Guratint.</h1>
+    <h1 style="display: none">Temukan Keajaiban Sablon: Sablon Berkualitas Tinggi untuk Mewujudkan Ide Kreatif Anda dengan
+        Layanan Sablon Terbaik yang Menawarkan Keindahan Cetak yang Tahan Lama dan Ekspresif</h1>
+
     <div id="page-header" class="ph-full ph-cap-sm ph-ghost-scroll ph-image-cover ph-image-cover-4 ph-content-parallax">
         <div class="page-header-inner tt-wrap">
             <div class="bg-circle-line ph-appear"></div>
 
-            <!-- Begin page header image -->
-            <div class="ph-image">
-                <div class="ph-image-inner">
-                    <img src="/assets/img/UV Print.png" alt="Image" />
+            @if ($hero)
+                <!-- Begin page header image -->
+                <div class="ph-image">
+                    <div class="ph-image-inner">
+                        <img src="{{ asset('storage/' . $hero->thumbnail) }}" alt="{{ $hero->desc }}" width="100%"
+                            height="100%" />
+                    </div>
                 </div>
-            </div>
-            <!-- End page header image -->
+                <!-- End page header image -->
+            @endif
 
             <!-- Begin page header caption -->
             <div class="ph-caption">
@@ -96,9 +106,11 @@
         </div>
         <div class="custom-zoom margin-bottom-150">
             <div class="wrapper-zoom">
-                <div class="content-zoom" id="grow">
-                    <img src="https://picsum.photos/1200/800?random=1">
-                </div>
+                @if ($wa)
+                    <div class="content-zoom" id="grow">
+                        <img src="{{ asset('storage/' . $wa->thumbnail) }}" alt="{{ $wa->desc }}">
+                    </div>
+                @endif
             </div>
             <div class="custom-container tt-grid ttgr-layout-3 full-width">
                 <div class="tt-grid-item" id="grow-left">
@@ -135,7 +147,8 @@
                                         <div class="portfolio-interactive-item">
                                             <figure class="pi-item-image">
                                                 <div class="pi-item-image-inner">
-                                                    <img src="{{ asset('storage/' . $itemKat->thumbnail) }}" alt="image">
+                                                    <img src="{{ asset('storage/' . $itemKat->thumbnail) }}"
+                                                        alt="image">
                                                 </div>
                                             </figure>
 
@@ -149,26 +162,6 @@
                                         </div>
                                     @endforeach
                                     <!-- End portfolio interactive item -->
-
-                                    {{-- <div class="portfolio-interactive-item">
-
-                                        <figure class="pi-item-image">
-                                            <div class="pi-item-image-inner">
-                                                <video class="pi-item-video" loop muted preload="metadata"
-                                                    poster="assets/vids/fashion-shoot.jpg">
-                                                    <source src="assets/vids/fashion-shoot.mp4" type="video/mp4">
-                                                    <source src="assets/vids/fashion-shoot.webm" type="video/webm">
-                                                </video>
-                                            </div> 
-                                        </figure> 
-
-                                        <a href="single-project-3.html" class="pi-item-title-link skew-on-scroll">
-                                            <div class="pi-item-title-link-inner">
-                                                <h2 class="pi-item-title">Card Board</h2>
-                                                <div class="pi-item-hover-title">Card Board</div>
-                                            </div>
-                                        </a> 
-                                    </div> --}}
                                 </div>
                                 <!-- End portfolio interactive list -->
 

@@ -13,36 +13,31 @@ class PortoController extends Controller
     public function porto(): View
     {
 
-        $market = Market::all();
-
-        $kategori = Kategori::all();
-
-        return view('porto.index', compact('kategori', 'market'));
+        return view('porto.index');
     }
 
     public function portoList(Kategori $kategori): View
     {
+        $pilih = $kategori;
 
-        $portos = Porto::where('kategori_id', '=', $kategori->id)
+        $portos = Porto::where('kategori_id', '=', $pilih->id)
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
         $listKategori = Kategori::count();
 
 
-        $market = Market::all();
-
-        if ($kategori->id === $listKategori) {
-            $kategori->id = 1;
+        if ($pilih->id === $listKategori) {
+            $pilih->id = 1;
         } else {
-            $kategori->id += +1;
+            $pilih->id += +1;
         }
 
         $next = Kategori::query()
-            ->where('id', '=', $kategori->id)
+            ->where('id', '=', $pilih->id)
             ->limit(1)
             ->first();
 
-        return view('porto.detail.list', compact('kategori', 'portos', 'next', 'market'));
+        return view('porto.detail.list', compact('pilih', 'portos', 'next'));
     }
 }

@@ -41,11 +41,13 @@ class LandingPageResource extends Resource
                             ->schema([
                                 FileUpload::make('content')
                                     ->image()
+                                    ->optimize('webp')
+                                    ->resize(30)
                                     ->maxSize(1024)
                                     ->directory('content-landing'),
                                 FileUpload::make('video')
                                     ->acceptedFileTypes(['video/mp4', 'video/ogg', 'video/webm'])
-                                    ->maxSize(51200)
+                                    ->maxSize(5120)
                                     ->directory('content-video'),
                                 Select::make('button')
                                     ->options([

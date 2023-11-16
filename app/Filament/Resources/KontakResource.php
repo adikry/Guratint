@@ -70,11 +70,6 @@ class KontakResource extends Resource
             ->actions([
                 Tables\Actions\DeleteAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ])
             ->emptyStateActions([
                 // Tables\Actions\CreateAction::make(),
             ]);

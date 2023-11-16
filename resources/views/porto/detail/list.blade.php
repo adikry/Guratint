@@ -5,11 +5,11 @@
 @push('head')
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="GuraTint" />
-    <meta property="og:title" content="Portofolio {{ $kategori->nama }}" />
+    <meta property="og:title" content="Portofolio {{ $pilih->nama }}" />
     <meta property="og:description"
-        content="Portofolio pilihan Guratint dalam kategori {{ $kategori->nama }} sebagai bahan referensi Anda!" />
+        content="Portofolio pilihan Guratint dalam kategori {{ $pilih->nama }} sebagai bahan referensi Anda!" />
     <meta property="og:url" content="{{ url()->full() }}" />
-    <meta property="og:image" content="{{ asset('storage/' . $kategori->thumbnail) }}">
+    <meta property="og:image" content="{{ asset('storage/' . $pilih->thumbnail) }}">
     <meta property="og:image:width" content="526">
     <meta property="og:image:height" content="275">
     <meta property="og:image:type" content="image/jpeg">
@@ -26,7 +26,7 @@
 
             <div class="ph-image">
                 <div class="ph-image-inner">
-                    <img src="{{ asset('storage/' . $kategori->thumbnail) }}" alt="Image" />
+                    <img src="{{ asset('storage/' . $pilih->thumbnail) }}" alt="Image" />
                 </div>
             </div>
 
@@ -39,12 +39,12 @@
 
                 <h1 class="ph-caption-title">
                     <div class="ph-appear">
-                        {{ $kategori->nama }}
+                        {{ $pilih->nama }}
                     </div>
                 </h1>
 
                 <div class="ph-caption-title-ghost">
-                    <div class="ph-appear">{{ $kategori->nama }}</div>
+                    <div class="ph-appear">{{ $pilih->nama }}</div>
                 </div>
             </div>
             <!-- End page header caption -->

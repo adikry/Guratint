@@ -25,7 +25,7 @@
                 </div>
                 <h1 class="ph-caption-title">
                     <div class="ph-appear">
-                        @if ($kategori)
+                        @if ($pilih)
                             Kategori : {{ $beritas[0]->kategori->nama }}
                         @else
                             Blog

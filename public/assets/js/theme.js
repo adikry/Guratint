@@ -2718,10 +2718,10 @@
                 ease: "none",
                 scrollTrigger: {
                     trigger: "#page-content",
-                    start: "top top",
-                    end: "top top",
+                    start: "top bottom",
+                    end: "top 100px",
                     scrub: true,
-                    markers: true,
+                    markers: false,
                 },
             });
         }

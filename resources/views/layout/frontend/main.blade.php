@@ -58,18 +58,13 @@
 
     <!-- Libs and Plugins CSS -->
     <link rel="stylesheet" href="/assets/vendor/normalize/normalize.min.css" />
-    <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
     <link rel="stylesheet" href="/assets/vendor/fontawesome/css/fontawesome-all.min.css" />
-    <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
     <link rel="stylesheet" href="/assets/vendor/swiper/css/swiper-bundle.min.css" />
-    <!-- Swiper CSS (https://swiperjs.com/) -->
-    {{-- <link rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery.min.css" />
-    <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) --> --}}
     @stack('css')
 
     <!-- Template master CSS -->
-    <link rel="stylesheet" href="/assets/css/helper.css" />
-    <link id="tt-themecss" rel="stylesheet" href="/assets/css/theme.css" />
+    <link rel="stylesheet" href="/assets/css/helper.min.css" />
+    <link id="tt-themecss" rel="stylesheet" href="/assets/css/theme.min.css" />
 </head>
 
 
@@ -88,9 +83,10 @@
         <div id="page-transition">
             <div class="ptr-overlay"></div>
             <div class="ptr-preloader">
-                <div class="ptr-prel-content">
+                <div class="ptr-prel-image">
                     <!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
-                    <img src="/assets/img/Logo Guratint.png" class="ptr-prel-image tt-logo-light" alt="Logo" />
+                    <img src="/assets/img/Logo Guratint.webp" class="ptr-prel-image tt-logo-light" alt="Logo"
+                        width="100%" height="100%" />
                 </div>
                 <!-- /.ptr-prel-content -->
             </div>
@@ -127,15 +123,11 @@
     <script src="/assets/vendor/gsap/ScrollTrigger.min.js"></script>
     <script src="/assets/vendor/smooth-scrollbar.js"></script>
     <script src="/assets/vendor/swiper/js/swiper-bundle.min.js"></script>
-    {{-- <script src="/assets/vendor/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="/assets/vendor/isotope/isotope.pkgd.min.js"></script>
-    <script src="/assets/vendor/isotope/packery-mode.pkgd.min.js"></script> --}}
-    {{-- <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> --}}
     <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
 
     @stack('js')
 
-    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/theme.min.js"></script>
 </body>
 
 </html>

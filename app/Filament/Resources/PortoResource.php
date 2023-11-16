@@ -62,7 +62,9 @@ class PortoResource extends Resource
                                     ->maxLength(255),
                                 Forms\Components\FileUpload::make('thumbnail')
                                     ->image()
-                                    ->maxSize(2048)
+                                    ->optimize('webp')
+                                    ->resize('40')
+                                    ->maxSize(1024)
                                     ->directory('porto-head')
                                     ->required(),
                                 Forms\Components\Select::make('kategori_id')

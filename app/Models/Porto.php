@@ -22,6 +22,8 @@ class Porto extends Model
         'forHomepage' => 'boolean'
     ];
 
+    protected $with = ['user', 'kategori'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');

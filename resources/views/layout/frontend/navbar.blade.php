@@ -5,7 +5,7 @@
 
             <div class="tt-logo">
                 <a href="/">
-                    <img src="/assets/img/Logo Guratint.png" class="tt-logo-light magnetic-item" alt="Logo" />
+                    <img src="/assets/img/Logo Guratint.webp" class="tt-logo-light magnetic-item" alt="Logo" />
                 </a>
             </div>
 

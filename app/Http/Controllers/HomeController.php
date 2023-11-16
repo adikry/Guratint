@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Clicked;
 use App\Models\Client;
-use App\Models\Kategori;
 use App\Models\Kontak;
 use App\Models\LandingPage;
 use App\Models\Market;
 use App\Models\Porto;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -24,9 +24,6 @@ class HomeController extends Controller
 
         $title = '';
 
-        $market = Market::all();
-
-        $kategori = Kategori::all();
         $portos = Porto::query()
             ->where('isActive', '=', 1)
             ->where('forHomepage', '=', 1)
@@ -44,7 +41,17 @@ class HomeController extends Controller
             ->orderBy('published_at', 'desc')
             ->get();
 
-        return view('home.index', compact('kategori', 'portos', 'beritas', 'clients', 'market'));
+        $hero = Section::query()
+            ->where('nama', '=', 'Hero Image')
+            ->where('isActive', '=', 1)
+            ->first();
+
+        $wa = Section::query()
+            ->where('nama', '=', 'WA Image')
+            ->where('isActive', '=', 1)
+            ->first();
+
+        return view('home.index', compact('portos', 'beritas', 'clients', 'hero', 'wa'));
     }
 
     public function submit(Request $request)
@@ -64,29 +71,24 @@ class HomeController extends Controller
     public function about(): View
     {
 
-        $market = Market::all();
-
         $portos = Porto::query()
             ->where('published_at', '!=', null)
             ->get();
 
         $clients = Client::all();
-        return view('home.about', compact('portos', 'market', 'clients'));
+        return view('home.about', compact('portos', 'clients'));
     }
 
     public function contact(): View
     {
-        $market = Market::all();
-        return view('home.contact', compact('market'));
+        return view('home.contact');
     }
 
     public function links(): View
     {
         $links = Clicked::all();
 
-        $market = Market::all();
-
-        return view('links.index', compact('links', 'market'));
+        return view('links.index', compact('links'));
     }
 
     public function click(string $isClikced)
@@ -105,8 +107,6 @@ class HomeController extends Controller
             ->limit(1)
             ->first();
 
-        $market = Market::all();
-
-        return view('landing_page.index', compact('data', 'market'));
+        return view('landing_page.index', compact('data'));
     }
 }

@@ -38,7 +38,8 @@ class ClientResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('logo')
                     ->image()
-                    ->maxSize(2048)
+                    ->optimize('webp')
+                    ->maxSize(1028)
                     ->directory('client')
                     ->preserveFilenames()
                     ->getUploadedFileNameForStorageUsing(
