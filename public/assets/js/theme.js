@@ -792,12 +792,12 @@
         const content1Animation = gsap.fromTo(
             "#grow-left",
             { x: 0, opacity: 1 },
-            { x: "50%", opacity: 1 }
+            { x: "70%", opacity: 1 }
         );
         const content3Animation = gsap.fromTo(
             "#grow-right",
             { x: 0, opacity: 1 },
-            { duration: 1, x: "-50%", opacity: 1 }
+            { duration: 1, x: "-70%", opacity: 1 }
         );
 
         // Add animations to the timeline

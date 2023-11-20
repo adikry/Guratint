@@ -54,7 +54,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <!-- Secondary/Alter font -->
 
-    <link rel="canonical" href="https://guratint.id/">
+    {{-- <link rel="canonical" href="https://guratint.id/"> --}}
+    @stack('canonical')
 
     <!-- Libs and Plugins CSS -->
     <link rel="stylesheet" href="/assets/vendor/normalize/normalize.min.css" />

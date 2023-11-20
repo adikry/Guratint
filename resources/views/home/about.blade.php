@@ -2,6 +2,10 @@
     'title' => 'Tentang | ',
 ])
 
+@push('canonical')
+    <link rel="canonical" href="https://guratint.id/">
+@endpush
+
 @push('head')
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="GuraTint" />

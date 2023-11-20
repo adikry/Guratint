@@ -61,9 +61,7 @@ class BlogController extends Controller
             ->get();
         $pilih = $kategori;
 
-        $market = Market::all();
-
-        return view('blog.index', compact('beritas', 'kategories', 'pilih', 'market'));
+        return view('blog.index', compact('beritas', 'kategories', 'pilih'));
     }
 
     public function blogDetail(string $kategori, Berita $berita): View
@@ -88,8 +86,6 @@ class BlogController extends Controller
             ->limit(1)
             ->first();
 
-        $market = Market::all();
-
         $kategories = Kategori::query()
             ->join('berita', 'kategori_id', '=', 'kategori.id')
             ->select('kategori.nama', 'kategori.slug', DB::raw('count(*) as total'))
@@ -101,6 +97,6 @@ class BlogController extends Controller
 
         $pilih = $kategori;
 
-        return view('blog.detail', compact('pilih', 'berita', 'next', 'prev', 'market', 'kategories'));
+        return view('blog.detail', compact('pilih', 'berita', 'next', 'prev', 'kategories'));
     }
 }

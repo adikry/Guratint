@@ -2,6 +2,10 @@
     'title' => 'Blog | ',
 ])
 
+@push('canonical')
+    <link rel="canonical" href="https://guratint.id/blog/{{ $berita->kategori->slug }}/{{ $berita->slug }}">
+@endpush
+
 @push('head')
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="GuraTint" />

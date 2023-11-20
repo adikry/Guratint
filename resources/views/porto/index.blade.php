@@ -1,6 +1,11 @@
 @extends('layout.frontend.main', [
     'title' => 'Porto | ',
 ])
+
+@push('canonical')
+    <link rel="canonical" href="https://guratint.id/">
+@endpush
+
 @section('container')
     <div id="page-header" class="ph-cap-lg ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
         <div class="page-header-inner tt-wrap">

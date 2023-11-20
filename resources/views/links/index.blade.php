@@ -12,7 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
-    <title>GuraTint - Teman Bertinta</title>
+    <title>Links | GuraTint - Teman Bertinta</title>
 
 
     <meta property="og:type" content="website" />
@@ -44,6 +44,8 @@
     <!-- Template master CSS -->
     <link rel="stylesheet" href="/assets/css/helper.css" />
     <link id="tt-themecss" rel="stylesheet" href="/assets/css/theme.css" />
+
+    <link rel="canonical" href="https://guratint.id/">
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="GuraTint" />
