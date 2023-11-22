@@ -21,10 +21,9 @@ class EditLandingPage extends EditRecord
                         if ($record->content[$i]['content']) {
                             Storage::delete($record->content[$i]['content']);
                         }
-
-                        if ($record->content[$i]['video']) {
-                            Storage::delete($record->content[$i]['video']);
-                        }
+                    }
+                    if ($record->video) {
+                        Storage::delete($record->video);
                     }
                 }),
         ];
@@ -34,17 +33,18 @@ class EditLandingPage extends EditRecord
     {
 
         for ($i = 0; $i < count($record->content); $i++) {
-            if ($record->content[$i]['video'] != $data['content'][$i]['video']) {
-                if ($record->content[$i]['video'] != null)
-                    Storage::delete($record->content[$i]['video']);
-            }
-
             if ($record->content[$i]['content'] != $data['content'][$i]['content']) {
                 if ($record->content[$i]['content'] != null) {
                     Storage::delete($record->content[$i]['content']);
                 }
             }
         }
+
+        if ($record->video != $data['video']) {
+            if ($record->video != null)
+                Storage::delete($record->video);
+        }
+
         $record->update($data);
 
         return $record;

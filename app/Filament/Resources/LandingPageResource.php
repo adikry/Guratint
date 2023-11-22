@@ -10,6 +10,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -35,9 +36,26 @@ class LandingPageResource extends Resource
     {
         return $form
             ->schema([
-                Repeater::make('content')
+                Grid::make(2)
                     ->schema([
-                        Grid::make(2)
+                        FileUpload::make('video')
+                            ->acceptedFileTypes(['video/mp4', 'video/ogg', 'video/webm'])
+                            ->maxSize(5120)
+                            ->directory('content-video'),
+                        Toggle::make('isActive')
+                            ->required()
+                            ->inline(false),
+                        Select::make('button')
+                            ->options([
+                                'Whatsapp' => 'Whatsapp',
+                                'Instagram' => 'Instagram',
+                                'Tiktok' => 'Tiktok'
+                            ])
+                            ->searchable()
+                            ->preload(),
+                        TextInput::make('link')
+                            ->maxLength(128),
+                        Repeater::make('content')
                             ->schema([
                                 FileUpload::make('content')
                                     ->image()
@@ -45,23 +63,9 @@ class LandingPageResource extends Resource
                                     ->resize(30)
                                     ->maxSize(1024)
                                     ->directory('content-landing'),
-                                FileUpload::make('video')
-                                    ->acceptedFileTypes(['video/mp4', 'video/ogg', 'video/webm'])
-                                    ->maxSize(5120)
-                                    ->directory('content-video'),
-                                Select::make('button')
-                                    ->options([
-                                        'Whatsapp' => 'Whatsapp',
-                                        'Instagram' => 'Instagram',
-                                        'Tiktok' => 'Tiktok'
-                                    ])
-                                    ->searchable()
-                                    ->preload(),
                             ])
-                    ])
-                    ->reorderable(false),
-                Toggle::make('isActive')
-                    ->required(),
+                            ->reorderable(false),
+                    ]),
             ])
             ->columns(1);
     }
@@ -92,9 +96,9 @@ class LandingPageResource extends Resource
                             if ($record->content[$i]['content']) {
                                 Storage::delete($record->content[$i]['content']);
                             }
-                            if ($record->content[$i]['video']) {
-                                Storage::delete($record->content[$i]['video']);
-                            }
+                        }
+                        if ($record->video) {
+                            Storage::delete($record->video);
                         }
                     }),
             ])
@@ -107,9 +111,9 @@ class LandingPageResource extends Resource
                                     if ($record->content[$i]['content']) {
                                         Storage::delete($record->content[$i]['content']);
                                     }
-                                    if ($record->content[$i]['video']) {
-                                        Storage::delete($record->content[$i]['video']);
-                                    }
+                                }
+                                if ($record->video) {
+                                    Storage::delete($record->video);
                                 }
                             }
                         }),
